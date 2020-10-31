@@ -1,6 +1,4 @@
-# juventude_umadcac_app
-
-A new Flutter project.
+# Juventude Umadcac App
 
 ## Getting Started
 
