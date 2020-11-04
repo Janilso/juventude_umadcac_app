@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/components/effect_curve/effect_curve.dart';
+import 'package:juventude_umadcac_app/components/effect_curve.dart';
+import 'package:juventude_umadcac_app/screens/home.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
@@ -12,6 +15,12 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
+    Timer(
+        Duration(milliseconds: 2500),
+        () => {
+              Navigator.pushReplacement(context,
+                  CupertinoPageRoute(builder: (context) => HomeScream()))
+            });
     super.initState();
   }
 
@@ -23,11 +32,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-              colors: [secondaryColor, primaryColor])),
+      decoration: BoxDecoration(gradient: gradientApp),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [

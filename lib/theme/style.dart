@@ -57,6 +57,11 @@ TextStyle headingWhite = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+LinearGradient gradientApp = LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [secondaryColor, primaryColor]);
+
 final ThemeData base = ThemeData.light();
 
 Color textFieldColor = const Color.fromRGBO(168, 160, 149, 0.6);
