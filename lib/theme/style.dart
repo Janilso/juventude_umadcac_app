@@ -65,8 +65,30 @@ LinearGradient gradientApp = LinearGradient(
 final ThemeData base = ThemeData.light();
 
 Color textFieldColor = const Color.fromRGBO(168, 160, 149, 0.6);
-const Color primaryColor = const Color(0xFFFF005F);
-const Color secondaryColor = const Color(0xFFF29200);
+const Color primaryColor = _pink;
+const Color secondaryColor = _orange;
 const Color transparentColor = const Color.fromRGBO(0, 0, 0, 0.2);
+const Color activeIndicatorColor = _black;
+const Color indicatorColor = _grey;
+const Color bgSlider = _greyLight;
+
 // const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
 // const Color dangerButtonColor = const Color(0XFFf53a4d);
+
+/* 
+ * Colors Name
+ */
+
+const Color _pinkLight = Color(0xFFFF81E6);
+const Color _pink = Color(0xFFFF005F);
+const Color _blueLight = Color(0xFF55A7D9);
+const Color _blue = Color(0xFF2D6DB4);
+const Color _blueDark = Color(0xFF002D63);
+const Color _yellow = Color(0xFFF29200);
+const Color _orange = Color(0xFFF29200);
+const Color _red = Color(0xFF002D63);
+const Color _greyLight = Color(0xFFEFEFEF);
+const Color _grey = Color(0xFFDCDCDC);
+const Color _greyDark = Color(0xFFA2A2A2);
+const Color _black = Color(0xFF000000);
+const Color _green = Color(0xFF44AC32);
