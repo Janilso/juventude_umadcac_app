@@ -79,6 +79,11 @@ const Color red = _red;
 const Color yellow = _yellow;
 const Color blueLight = _blueLight;
 const Color orange = _orange;
+const Color grey = _grey;
+const Color greyDark = _greyDark;
+const Color activeMenuColor = _blueDark;
+const Color iconItemMenuColor = _blueLight;
+const Color textItemMenuColor = _blueDark;
 
 // const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
 // const Color dangerButtonColor = const Color(0XFFf53a4d);

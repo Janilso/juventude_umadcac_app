@@ -47,7 +47,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           Positioned(
               bottom: 100,
               child: CircularProgressIndicator(
-                backgroundColor: primaryColor.withAlpha(70),
+                backgroundColor: Colors.white,
               ))
         ],
       ),

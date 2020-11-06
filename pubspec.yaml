@@ -15,6 +15,8 @@ dependencies:
   carousel_slider: ^2.3.1
   flutter_calendar_carousel: ^1.5.1
   photo_view: ^0.10.2
+  package_info: ^0.4.3+2
+  scroll_shadow_container: ^1.0.1
 
 dev_dependencies:
   flutter_test:
