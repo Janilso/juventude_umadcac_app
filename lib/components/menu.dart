@@ -54,7 +54,7 @@ class _MenuState extends State<Menu> {
                 child: ListView(
                   children: [
                     _buildItemMenu(
-                        icon: Feather.home, text: "Início", isActive: false),
+                        icon: Feather.home, text: "Início", isActive: true),
                     _buildItemMenu(icon: Feather.calendar, text: "Agenda"),
                     _buildItemMenu(
                         icon: Feather.user_plus, text: "Cadastro Umadcac"),
@@ -88,25 +88,28 @@ class _MenuState extends State<Menu> {
   Widget _buildItemMenu(
       {IconData icon = Icons.warning,
       String text = 'Name',
-      bool isActive = false}) {
-    return ListTile(
-      tileColor: isActive ? activeMenuColor : Colors.transparent,
-      leading: Padding(
-        padding: EdgeInsets.only(left: 10),
-        child: Icon(
+      bool isActive = false,
+      onPressed}) {
+    return FlatButton(
+      onPressed: onPressed ?? () {},
+      padding: EdgeInsets.only(left: 10),
+      // onTap: onTap,
+      child: ListTile(
+        tileColor: isActive ? activeMenuColor : Colors.transparent,
+        leading: Icon(
           icon,
           size: 22,
           color: isActive ? Colors.white : iconItemMenuColor,
         ),
-      ),
-      title: Container(
-        margin: EdgeInsets.only(top: 8),
-        child: Text(
-          text,
-          style: TextStyle(
-              fontFamily: "Baloo",
-              fontSize: 18,
-              color: isActive ? Colors.white : textItemMenuColor),
+        title: Container(
+          margin: EdgeInsets.only(top: 8),
+          child: Text(
+            text,
+            style: TextStyle(
+                fontFamily: "Baloo",
+                fontSize: 17,
+                color: isActive ? Colors.white : textItemMenuColor),
+          ),
         ),
       ),
     );
