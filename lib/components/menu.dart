@@ -92,10 +92,12 @@ class _MenuState extends State<Menu> {
       onPressed}) {
     return FlatButton(
       onPressed: onPressed ?? () {},
+      color: isActive ? activeMenuColor : Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       padding: EdgeInsets.only(left: 10),
       // onTap: onTap,
       child: ListTile(
-        tileColor: isActive ? activeMenuColor : Colors.transparent,
+        // tileColor: isActive ? activeMenuColor : Colors.transparent,
         leading: Icon(
           icon,
           size: 22,
