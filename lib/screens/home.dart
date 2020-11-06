@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:juventude_umadcac_app/components/card_icon_text.dart';
 import 'package:juventude_umadcac_app/components/carousel_images.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
+import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 
 final List<String> imgList = [
@@ -38,24 +41,43 @@ class _HomeScreamState extends State<HomeScream> {
                 images: imgList,
               ),
             ),
+            VersicleDay(),
             Center(
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 30),
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        color: Colors.red,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withAlpha(70),
-                              blurRadius: 20,
-                              spreadRadius: 0)
-                        ]),
-                    height: 200,
-                  )
-                ],
+              child: Container(
+                child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 30,
+                  crossAxisSpacing: 30,
+                  padding:
+                      EdgeInsets.only(top: 20, left: 50, right: 50, bottom: 40),
+                  children: [
+                    CardIconText(
+                      icon: Feather.calendar,
+                      text: "Agenda",
+                      onTap: () {
+                        print("Cliqued");
+                      },
+                    ),
+                    CardIconText(
+                      icon: Feather.info,
+                      iconColor: blueLight,
+                      text: "Sobre",
+                    ),
+                    CardIconText(
+                      icon: Feather.map_pin,
+                      iconColor: yellow,
+                      text: "Locais",
+                    ),
+                    CardIconText(
+                      icon: Feather.phone,
+                      iconColor: orange,
+                      text: "Contato",
+                    ),
+                  ],
+                ),
               ),
             )
           ],

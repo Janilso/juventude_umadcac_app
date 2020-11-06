@@ -7,7 +7,8 @@ ThemeData appTheme = ThemeData(
   indicatorColor: Colors.white,
   splashColor: Colors.white24,
   splashFactory: InkRipple.splashFactory,
-  accentColor: Colors.white,
+  // accentColor: Colors.white,
+  accentColor: Colors.red,
   canvasColor: Colors.white,
   scaffoldBackgroundColor: Colors.white,
   backgroundColor: Colors.white,
@@ -71,6 +72,13 @@ const Color transparentColor = const Color.fromRGBO(0, 0, 0, 0.2);
 const Color activeIndicatorColor = _black;
 const Color indicatorColor = _grey;
 const Color bgSlider = _greyLight;
+const Color defaultColor = _black;
+const Color shadowBlack = _blackShadow;
+const Color colorItemMenu = _blue;
+const Color red = _red;
+const Color yellow = _yellow;
+const Color blueLight = _blueLight;
+const Color orange = _orange;
 
 // const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
 // const Color dangerButtonColor = const Color(0XFFf53a4d);
@@ -84,11 +92,12 @@ const Color _pink = Color(0xFFFF005F);
 const Color _blueLight = Color(0xFF55A7D9);
 const Color _blue = Color(0xFF2D6DB4);
 const Color _blueDark = Color(0xFF002D63);
-const Color _yellow = Color(0xFFF29200);
+const Color _yellow = Color(0xFFFBD900);
 const Color _orange = Color(0xFFF29200);
 const Color _red = Color(0xFF002D63);
 const Color _greyLight = Color(0xFFEFEFEF);
 const Color _grey = Color(0xFFDCDCDC);
 const Color _greyDark = Color(0xFFA2A2A2);
 const Color _black = Color(0xFF000000);
+const Color _blackShadow = Color.fromRGBO(0, 0, 0, 0.15);
 const Color _green = Color(0xFF44AC32);
