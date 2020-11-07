@@ -17,6 +17,7 @@ dependencies:
   photo_view: ^0.10.2
   package_info: ^0.4.3+2
   scroll_shadow_container: ^1.0.1
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:

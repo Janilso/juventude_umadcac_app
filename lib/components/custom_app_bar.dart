@@ -15,6 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool hasPop = Navigator.canPop(context);
     return PreferredSize(
       preferredSize: preferredSize,
       child: AppBar(
@@ -22,9 +23,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(top: 15),
           child: IconButton(
             tooltip: "Menu",
-            icon: Icon(Feather.menu),
+            icon: Icon(hasPop ? Feather.arrow_left : Feather.menu),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              hasPop
+                  ? Navigator.pop(context)
+                  : Scaffold.of(context).openDrawer();
             },
           ),
         ),
@@ -32,7 +35,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Padding(
           padding: EdgeInsets.only(top: 10),
           child: title != null
-              ? Text(title)
+              ? Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        fontFamily: "Baloo",
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700),
+                  ),
+                )
               : Image.asset(
                   ImagesAssets.logoHW,
                   height: 40,
