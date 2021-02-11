@@ -169,16 +169,40 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ? 270
                 : _sizeScreen.height * 0.6,
         borderRadius: _borderRadius,
-        panelBuilder: (sc) => _selectedEvents.isNotEmpty ? _listView(sc) : null,
+        panelBuilder: (sc) =>
+            _selectedEvents.isNotEmpty ? _buildListEvents(sc) : null,
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(height: 20),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
                 child: CustomCalendar(
                     events: _events, onDaySelected: _onDaySelected),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Container(
+                  width: _sizeScreen.width * 0.5,
+                  height: 3,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: greyLight),
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: [
+                    _buildLend('Hoje', color: grey),
+                    _buildLend('Dia Selecionado', color: green),
+                    _buildLend('Evento', gradient: gradientApp),
+                  ],
+                ),
               )
             ],
           ),
@@ -187,7 +211,29 @@ class _CalendarScreenState extends State<CalendarScreen> {
     );
   }
 
-  Widget _listView(ScrollController scrollController) {
+  Widget _buildLend(String description, {Color color, Gradient gradient}) {
+    return Row(
+      children: [
+        Container(
+          width: 30,
+          height: 30,
+          decoration: BoxDecoration(
+              color: color, shape: BoxShape.circle, gradient: gradient),
+        ),
+        SizedBox(width: 10),
+        Padding(
+          padding: const EdgeInsets.only(top: 7),
+          child: Text(
+            description,
+            style: TextStyle(
+                fontFamily: 'Baloo', fontSize: 20, fontWeight: FontWeight.w500),
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget _buildListEvents(ScrollController scrollController) {
     return Container(
       decoration: BoxDecoration(
         gradient: gradientApp,
