@@ -81,6 +81,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
     return TableCalendar(
       calendarController: _calendarController,
       locale: 'pt_BR',
+      availableGestures: AvailableGestures.horizontalSwipe,
       events: widget.events,
       weekendDays: [7],
       startingDayOfWeek: StartingDayOfWeek.sunday,
