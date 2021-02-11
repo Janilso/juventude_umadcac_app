@@ -20,6 +20,7 @@ dependencies:
   scroll_shadow_container: ^1.0.1
   url_launcher: ^5.7.10
   table_calendar: ^2.3.3
+  sliding_up_panel: ^1.0.2
 
 dev_dependencies:
   flutter_test:

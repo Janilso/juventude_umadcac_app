@@ -8,7 +8,7 @@ class CustomCalendar extends StatefulWidget {
   final Map<DateTime, List<dynamic>> events;
   final Function(DateTime, List<dynamic>, List<dynamic>) onDaySelected;
 
-  const CustomCalendar({Key key, this.events, this.onDaySelected})
+  const CustomCalendar({Key key, @required this.events, this.onDaySelected})
       : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
     super.dispose();
   }
 
-  TextStyle configureStyle(
+  TextStyle _configureStyle(
       {Color color, FontWeight fontWeight, double fontSize}) {
     return TextStyle().copyWith(
         fontFamily: "Baloo",
@@ -39,47 +39,39 @@ class _CustomCalendarState extends State<CustomCalendar> {
         color: color ?? defaultColor);
   }
 
-  Widget buildConfigure(BuildContext context,
-      {DateTime date,
-      List eventsList,
-      double margin: 2,
-      withGradientAndRadial: false,
-      Color bg}) {
-    List events = eventsList ?? [];
-    bool isBeforeDate = date.isBefore(DateTime.now());
-    var gradient = withGradientAndRadial
-        ? events.isEmpty
-            ? null
-            : isBeforeDate
-                ? gradientAppDesabled
-                : gradientApp
-        : null;
-    var borderRadius = withGradientAndRadial
-        ? events.isEmpty
-            ? null
-            : BorderRadius.all(Radius.circular(100))
-        : null;
-
+  Widget _buildConfigureDays(BuildContext context, DateTime date,
+      {double margin: 2,
+      Color bg,
+      Gradient bgGradient,
+      Color fontColor,
+      bool circular: false}) {
     return Container(
       width: 100,
       height: 100,
       margin: EdgeInsets.all(margin),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        borderRadius: borderRadius,
-        gradient: gradient,
-        color: events.isEmpty ? Colors.transparent : bg,
+        borderRadius: circular ? BorderRadius.all(Radius.circular(100)) : null,
+        gradient: bgGradient,
+        color: bg,
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 7),
         child: Text(
           '${date.day}',
-          style: TextStyle().copyWith(
-              fontFamily: "Baloo",
-              fontWeight: FontWeight.w500,
-              fontSize: 20,
-              color: events.isEmpty ? defaultColor : Colors.white),
+          style: _configureStyle(color: fontColor),
         ),
+      ),
+    );
+  }
+
+  Widget _buildConfigureWeekNames(context, name, {fontColor: defaultColor}) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      alignment: Alignment.center,
+      child: Text(
+        '${name[0].toUpperCase()}${name.substring(1)}',
+        style: _configureStyle(fontSize: 18, color: fontColor),
       ),
     );
   }
@@ -93,15 +85,15 @@ class _CustomCalendarState extends State<CustomCalendar> {
       weekendDays: [7],
       startingDayOfWeek: StartingDayOfWeek.sunday,
       calendarStyle: CalendarStyle(
-        eventDayStyle: configureStyle(),
-        outsideStyle: configureStyle(color: Colors.black26),
-        outsideWeekendStyle: configureStyle(color: primaryColor.withAlpha(50)),
-        weekdayStyle: configureStyle(),
-        weekendStyle: configureStyle(color: primaryColor),
+        eventDayStyle: _configureStyle(),
+        outsideStyle: _configureStyle(color: Colors.black26),
+        outsideWeekendStyle: _configureStyle(color: primaryColor.withAlpha(50)),
+        weekdayStyle: _configureStyle(),
+        weekendStyle: _configureStyle(color: primaryColor),
       ),
       headerStyle: HeaderStyle(
         centerHeaderTitle: true,
-        titleTextStyle: configureStyle(
+        titleTextStyle: _configureStyle(
             color: blueLight, fontWeight: FontWeight.w700, fontSize: 28),
         titleTextBuilder: (date, locale) {
           String text = DateFormat('MMM y', locale).format(date);
@@ -116,181 +108,87 @@ class _CustomCalendarState extends State<CustomCalendar> {
       ),
       onDaySelected: widget.onDaySelected,
       builders: CalendarBuilders(
-        dayBuilder: (context, date, eventsList) {
+        dayBuilder: (
+          context,
+          date,
+          eventsList,
+        ) {
           List events = eventsList ?? [];
           bool isBeforeDate = date.isBefore(DateTime.now());
 
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(events.isEmpty ? 0 : 100)),
-              gradient: events.isEmpty
-                  ? null
-                  : isBeforeDate
-                      ? gradientAppDesabled
-                      : gradientApp,
-              color: events.isEmpty ? Colors.transparent : null,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7),
-              child: Text(
-                '${date.day}',
-                style: TextStyle().copyWith(
-                    fontFamily: "Baloo",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    color: events.isEmpty ? defaultColor : Colors.white),
-              ),
-            ),
-          );
-        },
-        todayDayBuilder: (context, date, _) {
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: grey,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(7),
-              child: Text(
-                '${date.day}',
-                style: configureStyle(),
-              ),
-            ),
-          );
-        },
-        selectedDayBuilder: (context, date, _) {
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: green,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7),
-              child: Text(
-                '${date.day}',
-                style: TextStyle().copyWith(
-                    fontFamily: "Baloo",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    color: Colors.white),
-              ),
-            ),
-          );
-        },
-        weekendDayBuilder: (context, DateTime date, eventsList) {
-          List events = eventsList ?? [];
-          bool isBeforeDate = date.isBefore(DateTime.now());
-          var gradient = events.isEmpty
+          Gradient gradient = events.isEmpty
               ? null
               : isBeforeDate
                   ? gradientAppDesabled
                   : gradientApp;
-          var borderRadius =
-              events.isEmpty ? null : BorderRadius.all(Radius.circular(100));
+          Color bgColor = events.isEmpty ? Colors.transparent : null;
+          Color fontColor = events.isEmpty ? defaultColor : Colors.white;
 
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              gradient: gradient,
-              borderRadius: borderRadius,
-              color: events.isEmpty ? Colors.transparent : null,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7),
-              child: Text(
-                '${date.day}',
-                style: TextStyle().copyWith(
-                    fontFamily: "Baloo",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    color: events.isEmpty ? primaryColor : Colors.white),
-              ),
-            ),
-          );
+          return _buildConfigureDays(context, date,
+              circular: events.isNotEmpty,
+              bgGradient: gradient,
+              bg: bgColor,
+              fontColor: fontColor);
+        },
+        todayDayBuilder: (context, date, _) =>
+            _buildConfigureDays(context, date, circular: true, bg: grey),
+        selectedDayBuilder: (context, date, _) {
+          return _buildConfigureDays(context, date,
+              circular: true, bg: green, fontColor: Colors.white);
+        },
+        weekendDayBuilder: (context, DateTime date, eventsList) {
+          List events = eventsList ?? [];
+          bool isBeforeDate = date.isBefore(DateTime.now());
+
+          Gradient gradient = events.isEmpty
+              ? null
+              : isBeforeDate
+                  ? gradientAppDesabled
+                  : gradientApp;
+          Color bgColor = events.isEmpty ? Colors.transparent : null;
+          Color fontColor = events.isEmpty ? primaryColor : Colors.white;
+
+          return _buildConfigureDays(context, date,
+              circular: events.isNotEmpty,
+              bg: bgColor,
+              bgGradient: gradient,
+              fontColor: fontColor);
         },
         outsideDayBuilder: (context, date, eventsList) {
           List events = eventsList ?? [];
           bool isBeforeDate = date.isBefore(DateTime.now());
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(events.isEmpty ? 0 : 100)),
-              gradient: events.isEmpty
-                  ? null
-                  : isBeforeDate
-                      ? gradientAppDesabled
-                      : gradientApp,
-              color: events.isEmpty ? Colors.transparent : null,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7),
-              child: Text(
-                '${date.day}',
-                style: TextStyle().copyWith(
-                  fontFamily: "Baloo",
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20,
-                  color: events.isEmpty
-                      ? defaultColor.withOpacity(0.3)
-                      : Colors.white,
-                ),
-              ),
-            ),
-          );
+
+          Gradient gradient = events.isEmpty
+              ? null
+              : isBeforeDate
+                  ? gradientAppDesabled
+                  : gradientApp;
+          Color bgColor = events.isEmpty ? Colors.transparent : null;
+          Color fontColor =
+              events.isEmpty ? defaultColor.withOpacity(0.3) : Colors.white;
+
+          return _buildConfigureDays(context, date,
+              circular: events.isNotEmpty,
+              bgGradient: gradient,
+              bg: bgColor,
+              fontColor: fontColor);
         },
         outsideWeekendDayBuilder: (context, date, eventsList) {
           List events = eventsList ?? [];
           bool isBeforeDate = date.isBefore(DateTime.now());
-          return Container(
-            width: 100,
-            height: 100,
-            margin: const EdgeInsets.all(2),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(events.isEmpty ? 0 : 100)),
-              gradient: events.isEmpty
-                  ? null
-                  : isBeforeDate
-                      ? gradientAppDesabled
-                      : gradientApp,
-              color: events.isEmpty ? Colors.transparent : null,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7),
-              child: Text(
-                '${date.day}',
-                style: TextStyle().copyWith(
-                  fontFamily: "Baloo",
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20,
-                  color: events.isEmpty
-                      ? primaryColor.withOpacity(0.3)
-                      : Colors.white,
-                ),
-              ),
-            ),
-          );
+          Gradient gradient = events.isEmpty
+              ? null
+              : isBeforeDate
+                  ? gradientAppDesabled
+                  : gradientApp;
+          Color bgColor = events.isEmpty ? Colors.transparent : null;
+          Color fontColor =
+              events.isEmpty ? primaryColor.withOpacity(0.3) : Colors.white;
+          return _buildConfigureDays(context, date,
+              circular: events.isNotEmpty,
+              bgGradient: gradient,
+              bg: bgColor,
+              fontColor: fontColor);
         },
         markersBuilder: (context, date, events, holidays) {
           final children = <Widget>[];
@@ -307,34 +205,11 @@ class _CustomCalendarState extends State<CustomCalendar> {
           return children;
         },
         dowWeekdayBuilder: (context, name) {
-          return Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            alignment: Alignment.center,
-            child: Text(
-              '${name[0].toUpperCase()}${name.substring(1)}',
-              style: TextStyle().copyWith(
-                fontFamily: "Baloo",
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: defaultColor,
-              ),
-            ),
-          );
+          return _buildConfigureWeekNames(context, name);
         },
         dowWeekendBuilder: (context, name) {
-          return Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            alignment: Alignment.center,
-            child: Text(
-              '${name[0].toUpperCase()}${name.substring(1)}',
-              style: TextStyle().copyWith(
-                fontFamily: "Baloo",
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: primaryColor,
-              ),
-            ),
-          );
+          return _buildConfigureWeekNames(context, name,
+              fontColor: primaryColor);
         },
       ),
     );
