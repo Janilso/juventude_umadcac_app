@@ -89,6 +89,7 @@ const Color red = _red;
 const Color yellow = _yellow;
 const Color blueLight = _blueLight;
 const Color orange = _orange;
+const Color greyLight = _greyLight;
 const Color grey = _grey;
 const Color greyDark = _greyDark;
 const Color activeMenuColor = _blueDark;
