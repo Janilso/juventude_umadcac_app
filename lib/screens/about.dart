@@ -5,12 +5,12 @@ import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class AboutScream extends StatefulWidget {
+class AboutScreen extends StatefulWidget {
   @override
-  _AboutScreamState createState() => _AboutScreamState();
+  _AboutScreenState createState() => _AboutScreenState();
 }
 
-class _AboutScreamState extends State<AboutScream> {
+class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,19 +42,14 @@ class _AboutScreamState extends State<AboutScream> {
               ),
               Text(
                 'Sua diretoria é composta por:',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+                style: TextStyle(fontSize: 20),
               ),
               _buildListJobTitles(),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: RichText(
                     text: TextSpan(
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                         children: [
                       TextSpan(
                           text:

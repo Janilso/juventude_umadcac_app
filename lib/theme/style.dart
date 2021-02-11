@@ -63,6 +63,16 @@ LinearGradient gradientApp = LinearGradient(
     end: Alignment.topRight,
     colors: [secondaryColor, primaryColor]);
 
+LinearGradient gradientAppInverted = LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    colors: [secondaryColor, primaryColor]);
+
+LinearGradient gradientAppDesabled = LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    colors: [secondaryColor.withOpacity(0.6), primaryColor.withOpacity(0.6)]);
+
 final ThemeData base = ThemeData.light();
 
 Color textFieldColor = const Color.fromRGBO(168, 160, 149, 0.6);
@@ -85,6 +95,7 @@ const Color activeMenuColor = _blueDark;
 const Color iconItemMenuColor = _blueLight;
 const Color textItemMenuColor = _blueDark;
 const Color colorCardJobTitles = _blueDark;
+const Color green = _green;
 
 // const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
 // const Color dangerButtonColor = const Color(0XFFf53a4d);
