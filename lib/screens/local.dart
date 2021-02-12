@@ -27,12 +27,11 @@ class _LocalScreenState extends State<LocalScreen> {
           layers: [
             TileLayerOptions(
               urlTemplate:
-                  // "https://api.mapbox.com/styles/v1/janilso/ckl18gzet086d17pmox6zh8mn/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiamFuaWxzbyIsImEiOiJja2c3NjB2cXQwNDYzMnprYzdsYjNmZGhrIn0.VoGxX0DJkSSMoVRnJi8naA",
                   "https://api.mapbox.com/styles/v1/janilso/ckl19tydi09g517qvilh8n28t/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiamFuaWxzbyIsImEiOiJja2c3NjB2cXQwNDYzMnprYzdsYjNmZGhrIn0.VoGxX0DJkSSMoVRnJi8naA",
               additionalOptions: {
                 'accessToken':
                     'pk.eyJ1IjoiamFuaWxzbyIsImEiOiJja2c3NjB2cXQwNDYzMnprYzdsYjNmZGhrIn0.VoGxX0DJkSSMoVRnJi8naA',
-                // 'id': 'mapbox.streets',
+                'id': 'mapbox.streets',
               },
             ),
             MarkerLayerOptions(
