@@ -21,6 +21,8 @@ dependencies:
   url_launcher: ^5.7.10
   table_calendar: ^2.3.3
   sliding_up_panel: ^1.0.2
+  flutter_map: ^0.11.0
+  environment_config: ^2.2.5
 
 dev_dependencies:
   flutter_test:
@@ -56,3 +58,17 @@ flutter:
           weight: 700
         - asset: assets/fonts/open_sans/OpenSans-ExtraBold.ttf
           weight: 800
+
+environment_config:
+  path: env_config.dart
+  fields:
+    ACCESS_TOKEN_MAPBOX:
+      env_var: ACCESS_TOKEN_MAPBOX
+      dotenv: true
+
+    URL_TEMPLATE_MAPBOX:
+      env_var: ACCESS_TOKEN_MAPBOX
+      dotenv: true
+
+  imports:
+    - dart:io

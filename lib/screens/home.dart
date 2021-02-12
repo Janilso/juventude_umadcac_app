@@ -8,6 +8,7 @@ import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
+import 'package:juventude_umadcac_app/screens/local.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 
 final List<String> imgList = [
@@ -78,6 +79,12 @@ class _HomeScreamState extends State<HomeScream> {
                       icon: Feather.map_pin,
                       iconColor: yellow,
                       text: "Locais",
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LocalScreen()));
+                      },
                     ),
                     CardIconText(
                       icon: Feather.phone,
