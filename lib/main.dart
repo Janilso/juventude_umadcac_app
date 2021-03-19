@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: [const Locale('pt', 'BR')],
       debugShowCheckedModeBanner: false,
-      title: 'Juventude UMADCAC 2021',
+      title: 'Juventude UMADCAC 2021 Novo',
       theme: appTheme,
       home: SplashPage(),
     );
