@@ -97,6 +97,8 @@ const Color iconItemMenuColor = _blueLight;
 const Color textItemMenuColor = _blueDark;
 const Color colorCardJobTitles = _blueDark;
 const Color green = _green;
+const Color greenLight = _greenLight;
+const Color beige = _beige;
 
 // const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
 // const Color dangerButtonColor = const Color(0XFFf53a4d);
@@ -119,3 +121,5 @@ const Color _greyDark = Color(0xFFA2A2A2);
 const Color _black = Color(0xFF000000);
 const Color _blackShadow = Color.fromRGBO(0, 0, 0, 0.15);
 const Color _green = Color(0xFF44AC32);
+const Color _greenLight = Color(0xFF60D483);
+const Color _beige = Color(0xFFB255DF);

@@ -45,6 +45,7 @@ class CardIconText extends StatelessWidget {
             Text(
               text ?? '',
               style: TextStyle(fontSize: 18, color: colorItemMenu),
+              textAlign: TextAlign.center,
             )
           ],
         ),

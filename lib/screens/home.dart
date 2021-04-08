@@ -64,6 +64,16 @@ class _HomeScreamState extends State<HomeScream> {
                       },
                     ),
                     CardIconText(
+                      icon: Feather.music,
+                      iconColor: beige,
+                      text: "Repertório",
+                    ),
+                    CardIconText(
+                      icon: Feather.award,
+                      iconColor: yellow,
+                      text: "Ser Voluntário",
+                    ),
+                    CardIconText(
                       icon: Feather.info,
                       iconColor: blueLight,
                       text: "Sobre",
@@ -75,14 +85,19 @@ class _HomeScreamState extends State<HomeScream> {
                       },
                     ),
                     CardIconText(
-                      icon: Feather.map_pin,
-                      iconColor: yellow,
-                      text: "Locais",
+                      icon: Feather.message_circle,
+                      iconColor: greenLight,
+                      text: "Fale Conosco",
                     ),
                     CardIconText(
-                      icon: Feather.phone,
-                      iconColor: orange,
-                      text: "Contato",
+                      icon: Feather.file_text,
+                      iconColor: iconItemMenuColor,
+                      text: "Política de Privacidade",
+                    ),
+                    CardIconText(
+                      icon: Feather.file_text,
+                      iconColor: iconItemMenuColor,
+                      text: "Termos de Uso",
                     ),
                   ],
                 ),
