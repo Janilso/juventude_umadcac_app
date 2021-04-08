@@ -4,7 +4,6 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/components/card_icon_text.dart';
 import 'package:juventude_umadcac_app/components/carousel_images.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
@@ -28,7 +27,6 @@ class _HomeScreamState extends State<HomeScream> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerMenu(),
       appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: Column(
