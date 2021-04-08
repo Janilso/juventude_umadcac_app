@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool hasPop = Navigator.canPop(context);
+    // bool hasPop = Navigator.canPop(context);
     return PreferredSize(
       preferredSize: preferredSize,
       child: AppBar(
