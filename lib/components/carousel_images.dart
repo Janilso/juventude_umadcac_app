@@ -26,9 +26,10 @@ class _CarouselImagesState extends State<CarouselImages> {
               CarouselSlider(
                 options: CarouselOptions(
                     autoPlay: true,
-                    aspectRatio: 2.0,
+                    aspectRatio: 2.5,
                     enlargeCenterPage: true,
                     pauseAutoPlayOnTouch: true,
+                    viewportFraction: 0.7,
                     autoPlayInterval: Duration(seconds: 5),
                     onPageChanged: (index, _) {
                       setState(() {
@@ -57,8 +58,8 @@ class _CarouselImagesState extends State<CarouselImages> {
                 Image.network(
                   item,
                   fit: BoxFit.cover,
-                  width: 350.0,
-                  height: 200.0,
+                  width: 285.0,
+                  height: 160.0,
                 ),
               ],
             )),

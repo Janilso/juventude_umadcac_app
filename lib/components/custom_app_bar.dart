@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
@@ -15,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool hasPop = Navigator.canPop(context);
+    // bool hasPop = Navigator.canPop(context);
     return PreferredSize(
       preferredSize: preferredSize,
       child: AppBar(
