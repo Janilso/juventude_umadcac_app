@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/utils/imagens.dart';
+
 class VersicleDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,11 @@ class VersicleDay extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 color: Colors.red,
+                image: DecorationImage(
+                  image: AssetImage(ImagesAssets.imageVersicle),
+                  fit: BoxFit.contain,
+                  alignment: FractionalOffset.topCenter,
+                ),
                 boxShadow: [
                   BoxShadow(color: shadowBlack, blurRadius: 20, spreadRadius: 0)
                 ]),
