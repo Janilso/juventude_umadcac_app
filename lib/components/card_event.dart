@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:intl/intl.dart' show DateFormat;
+import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CardEvent extends StatelessWidget {
   final String title;
@@ -22,15 +23,7 @@ class CardEvent extends StatelessWidget {
     Color _color = Colors.white;
 
     return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-            color: _color,
-            fontFamily: "Baloo",
-            fontWeight: FontWeight.w700,
-            fontSize: 25,
-            height: 1),
-      ),
+      title: Text(title, style: TextStyles.h3ExtraBold()),
       subtitle: Column(
         children: [
           Row(
@@ -39,15 +32,12 @@ class CardEvent extends StatelessWidget {
               Icon(Feather.clock, color: _color, size: 13),
               SizedBox(width: 5),
               Padding(
-                padding: const EdgeInsets.only(top: 2),
+                padding: const EdgeInsets.only(top: 3),
                 child: Text(
                   _hours,
-                  style: TextStyle(
-                      color: _color,
-                      fontFamily: "Baloo",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                      height: 1),
+                  style: TextStyles.h6Regular(
+                    color: _color,
+                  ),
                 ),
               ),
               SizedBox(width: 25),
@@ -57,12 +47,9 @@ class CardEvent extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 2),
                 child: Text(
                   congregation.toUpperCase(),
-                  style: TextStyle(
-                      color: _color,
-                      fontFamily: "Baloo",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                      height: 1),
+                  style: TextStyles.h6Regular(
+                    color: _color,
+                  ),
                 ),
               ),
             ],
@@ -78,12 +65,7 @@ class CardEvent extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 2),
                   child: Text(
                     address,
-                    style: TextStyle(
-                        color: _color,
-                        fontFamily: "Baloo",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18,
-                        height: 1),
+                    style: TextStyles.h6Regular(color: _color),
                   ),
                 ),
               ),

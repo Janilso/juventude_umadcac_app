@@ -57,6 +57,7 @@ const Color defaultColor = _black;
 const Color shadowBlack = _blackShadow;
 const Color colorItemMenu = _blue;
 const Color red = _red;
+const Color redLight = _redLight;
 const Color yellow = _yellow;
 const Color blueLight = _blueLight;
 const Color orange = _orange;
