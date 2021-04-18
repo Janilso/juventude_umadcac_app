@@ -28,20 +28,12 @@ class CardIconText extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             color: Colors.white,
             boxShadow: [
-              BoxShadow(
-                color: shadowBlack,
-                blurRadius: 20,
-                spreadRadius: 0,
-              )
+              BoxShadow(color: shadowBlack, blurRadius: 20, spreadRadius: 0)
             ]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              color: iconColor,
-              size: 50,
-            ),
+            Icon(icon, color: iconColor, size: 50),
             SizedBox(height: 20),
             Text(
               text ?? '',

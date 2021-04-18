@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_job_titles.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -14,7 +13,6 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerMenu(),
       appBar: CustomAppBar(
         title: "SOBRE",
       ),

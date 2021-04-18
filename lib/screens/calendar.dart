@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_event.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_calendar.dart';
-import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/models/evento.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -152,7 +151,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _sizeScreen = MediaQuery.of(context).size;
 
     return Scaffold(
-      drawer: DrawerMenu(),
       appBar: CustomAppBar(
         title: 'AGENDA',
       ),
