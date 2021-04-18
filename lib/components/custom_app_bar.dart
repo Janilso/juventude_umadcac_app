@@ -19,18 +19,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
       preferredSize: preferredSize,
       child: AppBar(
-        leading: Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: IconButton(
-            tooltip: "Menu",
-            icon: Icon(hasPop ? Feather.arrow_left : Feather.menu),
-            onPressed: () {
-              hasPop
-                  ? Navigator.pop(context)
-                  : Scaffold.of(context).openDrawer();
-            },
-          ),
-        ),
+        // leading: Padding(
+        //   padding: EdgeInsets.only(top: 15),
+        //   child: IconButton(
+        //     tooltip: "Menu",
+        //     icon: Icon(hasPop ? Feather.arrow_left : Feather.menu),
+        //     onPressed: () {
+        //       hasPop
+        //           ? Navigator.pop(context)
+        //           : Scaffold.of(context).openDrawer();
+        //     },
+        //   ),
+        // ),
         backgroundColor: Colors.transparent,
         title: Padding(
           padding: EdgeInsets.only(top: 10),

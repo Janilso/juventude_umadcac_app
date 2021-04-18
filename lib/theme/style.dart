@@ -23,40 +23,34 @@ ThemeData appTheme = ThemeData(
   accentTextTheme: _buildTextTheme(base.accentTextTheme),
 );
 
-TextStyle textStyle = const TextStyle(
-  color: const Color(0XFF000000),
-  fontSize: 14.0,
-  fontWeight: FontWeight.normal,
-);
-
 TextTheme _buildTextTheme(TextTheme base) {
   return base.copyWith(
     headline6: base.headline6.copyWith(),
   );
 }
 
-TextStyle textGreen = const TextStyle(
-  color: const Color(0xFF00c497),
+// TextStyle textStyleH2BoldWhite = const TextStyle(
+//   color: const Color(0XFF000000),
+//   fontSize: 14.0,
+//   fontWeight: FontWeight.normal,
+// );
+
+// TextStyle textStyleH2BoldWhite = const TextStyle(
+//   color: Colors.white,
+//   fontSize: 30,
+//   fontWeight: FontWeight.w700,
+// );
+
+TextStyle textStyle = const TextStyle(
+  color: const Color(0XFF000000),
   fontSize: 14.0,
   fontWeight: FontWeight.normal,
 );
 
-TextStyle textPrimary = const TextStyle(
-  color: Color(0xFFFFD428),
-  fontSize: 14.0,
-  fontWeight: FontWeight.normal,
-);
-
-TextStyle textStyleSmall = const TextStyle(
-    color: const Color.fromRGBO(255, 255, 255, 0.8),
-    fontSize: 12.0,
-    fontWeight: FontWeight.bold);
-
-TextStyle headingWhite = TextStyle(
-  color: Colors.white,
-  fontSize: 22.0,
-  fontWeight: FontWeight.bold,
-);
+// TextStyle textStyleSmall = const TextStyle(
+//     color: const Color.fromRGBO(255, 255, 255, 0.8),
+//     fontSize: 12.0,
+//     fontWeight: FontWeight.bold);
 
 LinearGradient gradientApp = LinearGradient(
     begin: Alignment.bottomLeft,
@@ -116,6 +110,6 @@ const Color _red = Color(0xFF002D63);
 const Color _greyLight = Color(0xFFEFEFEF);
 const Color _grey = Color(0xFFDCDCDC);
 const Color _greyDark = Color(0xFFA2A2A2);
-const Color _black = Color(0xFF000000);
+const Color _black = Color(0xFF323232);
 const Color _blackShadow = Color.fromRGBO(0, 0, 0, 0.15);
 const Color _green = Color(0xFF44AC32);

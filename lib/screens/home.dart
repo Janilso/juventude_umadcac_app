@@ -28,7 +28,6 @@ class _HomeScreamState extends State<HomeScream> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerMenu(),
       appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: Column(
