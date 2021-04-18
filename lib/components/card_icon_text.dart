@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CardIconText extends StatelessWidget {
   final IconData icon;
@@ -21,8 +22,8 @@ class CardIconText extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 100,
-        width: 100,
+        height: 130,
+        width: 130,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
             color: Colors.white,
@@ -44,7 +45,8 @@ class CardIconText extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               text ?? '',
-              style: TextStyle(fontSize: 18, color: colorItemMenu),
+              style: TextStyles.h5Regular(color: colorItemMenu),
+              textAlign: TextAlign.center,
             )
           ],
         ),

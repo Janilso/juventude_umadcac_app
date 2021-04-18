@@ -29,48 +29,25 @@ TextTheme _buildTextTheme(TextTheme base) {
   );
 }
 
-// TextStyle textStyleH2BoldWhite = const TextStyle(
-//   color: const Color(0XFF000000),
-//   fontSize: 14.0,
-//   fontWeight: FontWeight.normal,
-// );
-
-// TextStyle textStyleH2BoldWhite = const TextStyle(
-//   color: Colors.white,
-//   fontSize: 30,
-//   fontWeight: FontWeight.w700,
-// );
-
-TextStyle textStyle = const TextStyle(
-  color: const Color(0XFF000000),
-  fontSize: 14.0,
-  fontWeight: FontWeight.normal,
-);
-
-// TextStyle textStyleSmall = const TextStyle(
-//     color: const Color.fromRGBO(255, 255, 255, 0.8),
-//     fontSize: 12.0,
-//     fontWeight: FontWeight.bold);
-
 LinearGradient gradientApp = LinearGradient(
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
-    colors: [secondaryColor, primaryColor]);
+    colors: [secondaryColor, pink]);
 
 LinearGradient gradientAppInverted = LinearGradient(
     begin: Alignment.topRight,
     end: Alignment.bottomLeft,
-    colors: [secondaryColor, primaryColor]);
+    colors: [secondaryColor, pink]);
 
 LinearGradient gradientAppDesabled = LinearGradient(
     begin: Alignment.topRight,
     end: Alignment.bottomLeft,
-    colors: [secondaryColor.withOpacity(0.6), primaryColor.withOpacity(0.6)]);
+    colors: [secondaryColor.withOpacity(0.6), pink.withOpacity(0.6)]);
 
 final ThemeData base = ThemeData.light();
 
 Color textFieldColor = const Color.fromRGBO(168, 160, 149, 0.6);
-const Color primaryColor = _pink;
+const Color primaryColor = _blueDark;
 const Color secondaryColor = _orange;
 const Color transparentColor = const Color.fromRGBO(0, 0, 0, 0.2);
 const Color activeIndicatorColor = _black;
@@ -91,25 +68,28 @@ const Color iconItemMenuColor = _blueLight;
 const Color textItemMenuColor = _blueDark;
 const Color colorCardJobTitles = _blueDark;
 const Color green = _green;
-
-// const Color activeButtonColor = const Color.fromRGBO(43, 194, 137, 50.0);
-// const Color dangerButtonColor = const Color(0XFFf53a4d);
+const Color purple = _purple;
+const Color blue = _blue;
+const Color pink = _pink;
 
 /* 
  * Colors Name
  */
-
 const Color _pinkLight = Color(0xFFFF81E6);
 const Color _pink = Color(0xFFFF005F);
+const Color _blueExtraLight = Color(0xFFF3F6FF);
 const Color _blueLight = Color(0xFF55A7D9);
 const Color _blue = Color(0xFF2D6DB4);
 const Color _blueDark = Color(0xFF002D63);
-const Color _yellow = Color(0xFFFBD900);
+const Color _yellow = Color(0xFFFFE470);
+const Color _orangeLight = Color(0xFFFFC473);
 const Color _orange = Color(0xFFF29200);
-const Color _red = Color(0xFF002D63);
+const Color _redLight = Color(0xFFF15B5E);
+const Color _red = Color(0xFFDC0105);
 const Color _greyLight = Color(0xFFF2F2F2);
 const Color _grey = Color(0xFFDCDCDC);
 const Color _greyDark = Color(0xFFA2A2A2);
+const Color _purple = Color(0xFFB255DF);
 const Color _black = Color(0xFF323232);
 const Color _blackShadow = Color.fromRGBO(0, 0, 0, 0.15);
-const Color _green = Color(0xFF44AC32);
+const Color _green = Color(0xFF3FC367);

@@ -4,7 +4,6 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/components/card_icon_text.dart';
 import 'package:juventude_umadcac_app/components/carousel_images.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
@@ -61,6 +60,18 @@ class _HomeScreamState extends State<HomeScream> {
                       },
                     ),
                     CardIconText(
+                      icon: Feather.music,
+                      iconColor: purple,
+                      text: "Repertório",
+                      onTap: () {},
+                    ),
+                    CardIconText(
+                      icon: Feather.award,
+                      iconColor: yellow,
+                      text: "Ser Voluntário",
+                      onTap: () {},
+                    ),
+                    CardIconText(
                       icon: Feather.info,
                       iconColor: blueLight,
                       text: "Sobre",
@@ -72,14 +83,22 @@ class _HomeScreamState extends State<HomeScream> {
                       },
                     ),
                     CardIconText(
-                      icon: Feather.map_pin,
-                      iconColor: yellow,
-                      text: "Locais",
+                      icon: Feather.message_circle,
+                      iconColor: green,
+                      text: "Fale Conosco",
+                      onTap: () {},
                     ),
                     CardIconText(
-                      icon: Feather.phone,
-                      iconColor: orange,
-                      text: "Contato",
+                      icon: Feather.file_text,
+                      iconColor: blue,
+                      text: "Política de Privacidade",
+                      onTap: () {},
+                    ),
+                    CardIconText(
+                      icon: Feather.file_text,
+                      iconColor: blue,
+                      text: "Termos de Uso",
+                      onTap: () {},
                     ),
                   ],
                 ),
