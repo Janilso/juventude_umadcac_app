@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_event.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_calendar.dart';
-import 'package:juventude_umadcac_app/components/menu.dart';
 import 'package:juventude_umadcac_app/models/evento.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/text_style.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -152,10 +152,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _sizeScreen = MediaQuery.of(context).size;
 
     return Scaffold(
-      drawer: DrawerMenu(),
-      appBar: CustomAppBar(
-        title: 'AGENDA',
-      ),
+      appBar: CustomAppBar(title: 'AGENDA'),
       body: SlidingUpPanel(
         parallaxEnabled: true,
         parallaxOffset: .5,
@@ -176,7 +173,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
                 child: CustomCalendar(
@@ -212,24 +209,26 @@ class _CalendarScreenState extends State<CalendarScreen> {
   }
 
   Widget _buildLend(String description, {Color color, Gradient gradient}) {
-    return Row(
-      children: [
-        Container(
-          width: 30,
-          height: 30,
-          decoration: BoxDecoration(
-              color: color, shape: BoxShape.circle, gradient: gradient),
-        ),
-        SizedBox(width: 10),
-        Padding(
-          padding: const EdgeInsets.only(top: 7),
-          child: Text(
-            description,
-            style: TextStyle(
-                fontFamily: 'Baloo', fontSize: 20, fontWeight: FontWeight.w500),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+                color: color, shape: BoxShape.circle, gradient: gradient),
           ),
-        )
-      ],
+          SizedBox(width: 10),
+          Padding(
+            padding: const EdgeInsets.only(top: 7),
+            child: Text(
+              description,
+              style: TextStyles.h5Medium(color: defaultColor),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -244,9 +243,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 5, bottom: 10),
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: Container(
-                width: _sizeScreen.width * 0.3,
+                width: _sizeScreen.width * 0.35,
                 height: 4,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
@@ -255,24 +254,24 @@ class _CalendarScreenState extends State<CalendarScreen> {
               ),
             ),
           ),
-          // SizedBox(height: 15),
           Expanded(
             child: ListView.separated(
-              // shrinkWrap: true,
-              // physics: NeverScrollableScrollPhysics(),
               controller: scrollController,
               separatorBuilder: (context, index) => Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 margin: EdgeInsets.symmetric(vertical: 10),
-                child: Divider(color: Colors.white, thickness: 2),
+                child: Divider(color: Colors.white, thickness: 1),
               ),
               itemBuilder: (context, index) {
                 Evento evento = _selectedEvents[index];
-                return CardEvent(
-                  title: evento.titulo,
-                  hours: evento.horario,
-                  congregation: evento.congregacao,
-                  address: evento.endereco,
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: CardEvent(
+                    title: evento.titulo,
+                    hours: evento.horario,
+                    congregation: evento.congregacao,
+                    address: evento.endereco,
+                  ),
                 );
               },
               itemCount: _selectedEvents.length,

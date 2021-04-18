@@ -35,9 +35,7 @@ class _HomeScreamState extends State<HomeScream> {
             Container(
               padding: EdgeInsets.only(top: 30, bottom: 20),
               color: bgSlider,
-              child: CarouselImages(
-                images: imgList,
-              ),
+              child: CarouselImages(images: imgList),
             ),
             VersicleDay(),
             Center(
@@ -64,8 +62,9 @@ class _HomeScreamState extends State<HomeScream> {
                     ),
                     CardIconText(
                       icon: Feather.music,
-                      iconColor: beige,
+                      iconColor: purple,
                       text: "Repertório",
+                      onTap: () {},
                     ),
                     CardIconText(
                       icon: Feather.award,
@@ -91,18 +90,21 @@ class _HomeScreamState extends State<HomeScream> {
                     ),
                     CardIconText(
                       icon: Feather.message_circle,
-                      iconColor: greenLight,
+                      iconColor: green,
                       text: "Fale Conosco",
+                      onTap: () {},
                     ),
                     CardIconText(
                       icon: Feather.file_text,
-                      iconColor: iconItemMenuColor,
+                      iconColor: blue,
                       text: "Política de Privacidade",
+                      onTap: () {},
                     ),
                     CardIconText(
                       icon: Feather.file_text,
-                      iconColor: iconItemMenuColor,
+                      iconColor: blue,
                       text: "Termos de Uso",
+                      onTap: () {},
                     ),
                   ],
                 ),
