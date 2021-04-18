@@ -130,4 +130,14 @@ class TextStyles {
       height: 1,
     );
   }
+
+  static TextStyle textReading({Color color: Colors.white}) {
+    return TextStyle(
+      fontFamily: "Baloo",
+      color: color,
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      height: 1.5,
+    );
+  }
 }

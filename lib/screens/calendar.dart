@@ -152,9 +152,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _sizeScreen = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(
-        title: 'AGENDA',
-      ),
+      appBar: CustomAppBar(title: 'AGENDA'),
       body: SlidingUpPanel(
         parallaxEnabled: true,
         parallaxOffset: .5,
