@@ -95,25 +95,21 @@ class _CustomCalendarState extends State<CustomCalendar> {
       headerStyle: HeaderStyle(
         centerHeaderTitle: true,
         titleTextStyle: _configureStyle(
-            color: blueLight, fontWeight: FontWeight.w700, fontSize: 28),
+            color: blueLight, fontWeight: FontWeight.w600, fontSize: 24),
         titleTextBuilder: (date, locale) {
           String text = DateFormat('MMM y', locale).format(date);
           return "${text[0].toUpperCase()}${text.substring(1)}";
         },
         formatButtonVisible: false,
         rightChevronIcon:
-            Icon(Feather.chevron_right, color: blueLight, size: 30),
+            Icon(Feather.chevron_right, color: blueLight, size: 25),
         rightChevronMargin: EdgeInsets.only(bottom: 15),
         leftChevronMargin: EdgeInsets.only(bottom: 15),
-        leftChevronIcon: Icon(Feather.chevron_left, color: blueLight, size: 30),
+        leftChevronIcon: Icon(Feather.chevron_left, color: blueLight, size: 25),
       ),
       onDaySelected: widget.onDaySelected,
       builders: CalendarBuilders(
-        dayBuilder: (
-          context,
-          date,
-          eventsList,
-        ) {
+        dayBuilder: (context, date, eventsList) {
           List events = eventsList ?? [];
           bool isBeforeDate = date.isBefore(DateTime.now());
 
@@ -147,7 +143,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
                   ? gradientAppDesabled
                   : gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
-          Color fontColor = events.isEmpty ? primaryColor : Colors.white;
+          Color fontColor = events.isEmpty ? redLight : Colors.white;
 
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
@@ -184,7 +180,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
                   : gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
           Color fontColor =
-              events.isEmpty ? primaryColor.withOpacity(0.3) : Colors.white;
+              events.isEmpty ? redLight.withOpacity(0.3) : Colors.white;
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
               bgGradient: gradient,
@@ -209,8 +205,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
           return _buildConfigureWeekNames(context, name);
         },
         dowWeekendBuilder: (context, name) {
-          return _buildConfigureWeekNames(context, name,
-              fontColor: primaryColor);
+          return _buildConfigureWeekNames(context, name, fontColor: redLight);
         },
       ),
     );
