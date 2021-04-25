@@ -84,33 +84,12 @@ class _InputTextState extends State<InputText> {
         decoration: InputDecoration(
           filled: true,
           fillColor: _hasError ? redExtraLight : Colors.white,
-          border: UnderlineInputBorder(
-            borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(5), right: Radius.circular(5)),
-            borderSide: BorderSide(color: Colors.transparent, width: 4.0),
-          ),
-          focusedErrorBorder: UnderlineInputBorder(
-            borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(5), right: Radius.circular(5)),
-            borderSide: BorderSide(color: red, width: 4.0),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(5), right: Radius.circular(5)),
-            borderSide: BorderSide(color: primaryColor, width: 4.0),
-          ),
-          enabledBorder: UnderlineInputBorder(
-            borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(5), right: Radius.circular(5)),
-            borderSide: BorderSide(
-                color: widget.withBorder ? grey : Colors.transparent,
-                width: 2.0),
-          ),
-          errorBorder: UnderlineInputBorder(
-            borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(5), right: Radius.circular(5)),
-            borderSide: BorderSide(color: red, width: 4.0),
-          ),
+          border: _builderBorderUnderline(Colors.transparent),
+          focusedErrorBorder: _builderBorderUnderline(red),
+          focusedBorder: _builderBorderUnderline(primaryColor),
+          enabledBorder: _builderBorderUnderline(
+              widget.withBorder ? grey : Colors.transparent),
+          errorBorder: _builderBorderUnderline(red),
           errorStyle: TextStyles.paragraphRegular(color: red),
           prefixIcon: widget.icon != null
               ? Icon(
@@ -126,6 +105,14 @@ class _InputTextState extends State<InputText> {
           labelStyle: TextStyles.h4Regular(color: _hasError ? red : blue),
         ),
       ),
+    );
+  }
+
+  InputBorder _builderBorderUnderline(Color color) {
+    return UnderlineInputBorder(
+      borderRadius: BorderRadius.horizontal(
+          left: Radius.circular(5), right: Radius.circular(5)),
+      borderSide: BorderSide(color: color, width: 2.0),
     );
   }
 }
