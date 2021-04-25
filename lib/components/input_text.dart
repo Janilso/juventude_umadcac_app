@@ -30,6 +30,7 @@ class InputText extends StatefulWidget {
 
 class _InputTextState extends State<InputText> {
   FocusNode _focusNode;
+  bool _hasError = false;
 
   @override
   void dispose() {
@@ -54,45 +55,75 @@ class _InputTextState extends State<InputText> {
       margin: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
-        color: Colors.white,
+        // color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: shadowBlack,
             blurRadius: 20,
-            offset: const Offset(0, 4),
+            offset: Offset(0, _hasError ? 0 : 4),
             spreadRadius: 0,
           )
         ],
       ),
       child: TextFormField(
         enabled: widget.enabled,
-        validator: widget.validator,
+        validator: (value) {
+          String mensageValidate = widget.validator(value);
+          setState(() {
+            _hasError = mensageValidate != null;
+          });
+          return mensageValidate;
+        },
         controller: widget.controller,
         keyboardType: widget.keyboardType,
         autocorrect: false,
         autofocus: false,
         focusNode: _focusNode,
-        style: TextStyles.h4Regular(color: primaryColor),
+        style: TextStyles.h4Regular(color: _hasError ? red : primaryColor),
         cursorColor: primaryColor,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: _hasError ? redExtraLight : Colors.white,
+          border: UnderlineInputBorder(
+            borderRadius: BorderRadius.horizontal(
+                left: Radius.circular(5), right: Radius.circular(5)),
+            borderSide: BorderSide(color: Colors.transparent, width: 4.0),
+          ),
+          focusedErrorBorder: UnderlineInputBorder(
+            borderRadius: BorderRadius.horizontal(
+                left: Radius.circular(5), right: Radius.circular(5)),
+            borderSide: BorderSide(color: red, width: 4.0),
+          ),
           focusedBorder: UnderlineInputBorder(
             borderRadius: BorderRadius.horizontal(
                 left: Radius.circular(5), right: Radius.circular(5)),
             borderSide: BorderSide(color: primaryColor, width: 4.0),
           ),
           enabledBorder: UnderlineInputBorder(
+            borderRadius: BorderRadius.horizontal(
+                left: Radius.circular(5), right: Radius.circular(5)),
             borderSide: BorderSide(
                 color: widget.withBorder ? grey : Colors.transparent,
                 width: 2.0),
           ),
+          errorBorder: UnderlineInputBorder(
+            borderRadius: BorderRadius.horizontal(
+                left: Radius.circular(5), right: Radius.circular(5)),
+            borderSide: BorderSide(color: red, width: 4.0),
+          ),
+          errorStyle: TextStyles.paragraphRegular(color: red),
           prefixIcon: widget.icon != null
               ? Icon(
                   widget.icon,
-                  color: _focusNode.hasFocus ? primaryColor : blue,
+                  color: _hasError
+                      ? red
+                      : _focusNode.hasFocus
+                          ? primaryColor
+                          : blue,
                 )
               : null,
           labelText: widget.labelText,
-          labelStyle: TextStyles.h4Regular(color: blue),
+          labelStyle: TextStyles.h4Regular(color: _hasError ? red : blue),
         ),
       ),
     );

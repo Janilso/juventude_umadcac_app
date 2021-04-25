@@ -20,6 +20,15 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
       MaskedTextController(mask: '(00) 00000-0000');
   TextEditingController _ctlNome = TextEditingController();
 
+  void validatorForm() {
+    final FormState form = _formKey.currentState;
+    if (!form.validate()) {
+      setState(() => _autovalidate = AutovalidateMode.always);
+    } else {
+      print("Send form");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,33 +39,29 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
           child: Form(
             key: _formKey,
             autovalidateMode: _autovalidate,
-            child: Expanded(
-              child: Container(
-                child: Column(
-                  children: [
-                    InputText(
-                      controller: _ctlNome,
-                      validator: _validate.validateDefault,
-                      labelText: "Nome *",
-                      icon: FontAwesome.bookmark,
-                    ),
-                    InputText(
-                      controller: _ctlContato,
-                      validator: _validate.validateCelular,
-                      labelText: "Contato (WhatsApp) *",
-                      icon: FontAwesome.whatsapp,
-                      keyboardType: TextInputType.number,
-                    ),
-                    CustomButton(
-                      text: "ENVIAR",
-                      onPressed: () {
-                        print("sa");
-                      },
-                      icon: Feather.send,
-                    )
-                  ],
+            child: Column(
+              children: [
+                InputText(
+                  controller: _ctlNome,
+                  validator: _validate.validateDefault,
+                  labelText: "Nome *",
+                  icon: FontAwesome.bookmark,
                 ),
-              ),
+                InputText(
+                  controller: _ctlContato,
+                  validator: _validate.validateCelular,
+                  labelText: "Contato (WhatsApp) *",
+                  icon: FontAwesome.whatsapp,
+                  keyboardType: TextInputType.number,
+                ),
+                CustomButton(
+                  text: "ENVIAR",
+                  onPressed: () {
+                    validatorForm();
+                  },
+                  icon: Feather.send,
+                )
+              ],
             ),
           ),
         ),
