@@ -1,8 +1,10 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_button.dart';
+import 'package:juventude_umadcac_app/components/custom_select.dart';
 import 'package:juventude_umadcac_app/components/input_text.dart';
 import 'package:juventude_umadcac_app/utils/validations.dart';
 
@@ -41,15 +43,18 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
             autovalidateMode: _autovalidate,
             child: Column(
               children: [
+                CustomSelect(
+                  labelText: "Departamento",
+                ),
                 InputText(
                   controller: _ctlNome,
-                  validator: _validate.validateDefault,
+                  validator: _validate.defaultValidate,
                   labelText: "Nome *",
                   icon: FontAwesome.bookmark,
                 ),
                 InputText(
                   controller: _ctlContato,
-                  validator: _validate.validateCelular,
+                  validator: _validate.celular,
                   labelText: "Contato (WhatsApp) *",
                   icon: FontAwesome.whatsapp,
                   keyboardType: TextInputType.number,

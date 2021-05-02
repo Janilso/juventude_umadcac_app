@@ -1,32 +1,26 @@
 class Validations {
-  String validateEmail(String value) {
+  String email(String value) {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value))
-      return 'Por favor, insira um email válido.';
-    else
-      return null;
+    return !regex.hasMatch(value) ? 'Por favor, insira um email válido.' : null;
   }
 
-  String validateCelular(String value) {
-    if (value.length != 15)
-      return 'Por favor, preencha corretamente este campo.';
-    else
-      return null;
+  String celular(String value) {
+    return value.length != 15
+        ? 'Por favor, preencha corretamente este campo.'
+        : null;
   }
 
-  String validateCep(String value) {
-    if (value.length != 10)
-      return 'Por favor, preencha corretamente este campo.';
-    else
-      return null;
+  String cep(String value) {
+    return value.length != 10
+        ? 'Por favor, preencha corretamente este campo.'
+        : null;
   }
 
-  String validateDefault(String value) {
-    if (value.isEmpty)
-      return 'Por favor, preencha corretamente este campo.';
-    else
-      return null;
+  String defaultValidate(String value) {
+    return value?.isEmpty ?? true
+        ? 'Por favor, preencha corretamente este campo.'
+        : null;
   }
 }

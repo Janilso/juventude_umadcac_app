@@ -112,7 +112,7 @@ class _InputTextState extends State<InputText> {
     return UnderlineInputBorder(
       borderRadius: BorderRadius.horizontal(
           left: Radius.circular(5), right: Radius.circular(5)),
-      borderSide: BorderSide(color: color, width: 2.0),
+      borderSide: BorderSide(color: color, width: 4.0),
     );
   }
 }
