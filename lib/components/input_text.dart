@@ -83,6 +83,7 @@ class _InputTextState extends State<InputText> {
         cursorColor: primaryColor,
         decoration: InputDecoration(
           filled: true,
+          hintText: widget.hintText,
           fillColor: _hasError ? redExtraLight : Colors.white,
           border: _builderBorderUnderline(Colors.transparent),
           focusedErrorBorder: _builderBorderUnderline(red),
