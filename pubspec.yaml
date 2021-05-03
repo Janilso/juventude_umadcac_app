@@ -21,6 +21,7 @@ dependencies:
   url_launcher: ^5.7.10
   table_calendar: ^2.3.3
   sliding_up_panel: ^1.0.2
+  flutter_masked_text: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -34,17 +35,17 @@ flutter:
   fonts:
     - family: Baloo
       fonts:
-        - asset: assets/fonts/baloo/BalooTammudu2-Regular.ttf
+        - asset: assets/fonts/baloo/BalooBhai2-Regular.ttf
           weight: 400
-        - asset: assets/fonts/baloo/BalooTammudu2-Medium.ttf
+        - asset: assets/fonts/baloo/BalooBhai2-Medium.ttf
           weight: 500
-        - asset: assets/fonts/baloo/BalooTammudu2-SemiBold.ttf
+        - asset: assets/fonts/baloo/BalooBhai2-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/baloo/BalooTammudu2-Bold.ttf
+        - asset: assets/fonts/baloo/BalooBhai2-Bold.ttf
           weight: 700
-        - asset: assets/fonts/baloo/BalooTammudu2-ExtraBold.ttf
+        - asset: assets/fonts/baloo/BalooBhai2-ExtraBold.ttf
           weight: 800
-    - family: Baloo
+    - family: OpenSans
       fonts:
         - asset: assets/fonts/open_sans/OpenSans-Light.ttf
           weight: 200

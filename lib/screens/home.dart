@@ -7,6 +7,7 @@ import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
+import 'package:juventude_umadcac_app/screens/voluntary.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 
 final List<String> imgList = [
@@ -69,7 +70,12 @@ class _HomeScreamState extends State<HomeScream> {
                       icon: Feather.award,
                       iconColor: yellow,
                       text: "Ser Voluntário",
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VoluntaryScream()));
+                      },
                     ),
                     CardIconText(
                       icon: Feather.info,
