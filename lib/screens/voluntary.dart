@@ -5,6 +5,7 @@ import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_button.dart';
 import 'package:juventude_umadcac_app/components/drop_down_search.dart';
 import 'package:juventude_umadcac_app/components/input_text.dart';
+import 'package:juventude_umadcac_app/utils/constants.dart';
 import 'package:juventude_umadcac_app/utils/validations.dart';
 
 class VoluntaryScream extends StatefulWidget {
@@ -26,7 +27,7 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
     if (!form.validate()) {
       setState(() => _autovalidate = AutovalidateMode.always);
     } else {
-      print("Send form");
+      print("Sendssss =>===== form");
     }
   }
 
@@ -44,15 +45,27 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
               children: [
                 DropDownSearch(
                   labelText: "Departamento",
-                  items: ["Brasil", "Japão", "Colômbia", "Argentina", "Sul"],
-                  icon: FontAwesome.bookmark,
+                  items: [
+                    "Comunicação",
+                    "Departamento 1",
+                    "Departamento 1",
+                    "Departamento 3",
+                    "Departamento 4"
+                  ],
+                  icon: Feather.users,
+                  validator: _validate.defaultValidate,
+                ),
+                DropDownSearch(
+                  labelText: "Congregação",
+                  items: CONSTANTS.CONGREGACOES,
+                  icon: Feather.home,
                   validator: _validate.defaultValidate,
                 ),
                 InputText(
                   controller: _ctlNome,
                   validator: _validate.defaultValidate,
                   labelText: "Nome *",
-                  icon: FontAwesome.bookmark,
+                  icon: Feather.bookmark,
                 ),
                 InputText(
                   controller: _ctlContato,
@@ -61,6 +74,7 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
                   icon: FontAwesome.whatsapp,
                   keyboardType: TextInputType.number,
                 ),
+                SizedBox(height: 30),
                 CustomButton(
                   text: "ENVIAR",
                   onPressed: () {

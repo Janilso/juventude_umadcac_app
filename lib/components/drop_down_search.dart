@@ -41,7 +41,6 @@ class DropDownSearch extends FormField<String> {
           builder: (FormFieldState<String> field) {
             final DropDownSearchState state = field;
             final ScrollController _scrollController = ScrollController();
-
             final InputDecoration effectiveDecoration = InputDecoration(
               filled: true,
               hintText: hintText,
@@ -125,14 +124,9 @@ class DropDownSearch extends FormField<String> {
                           style: TextStyles.h4Regular(
                               color: state._hasError ? red : primaryColor),
                           cursorColor: primaryColor,
-
-                          //
                           decoration: effectiveDecoration.copyWith(
                               errorText: field.errorText),
-
                           textAlign: TextAlign.start,
-                          // obscureText: false,
-                          // maxLengthEnforced: true,
                           maxLines: 1,
                           onSaved: setter,
                           inputFormatters: inputFormatters,
@@ -145,20 +139,28 @@ class DropDownSearch extends FormField<String> {
                     ? Container()
                     : Container(
                         margin: EdgeInsets.only(bottom: 20),
+                        color: Colors.white,
                         alignment: Alignment.topCenter,
-                        height: itemsVisibleInDropdown *
-                            46.0, //limit to default 3 items in dropdownlist view and then remaining scrolls
+                        height: itemsVisibleInDropdown * 57.0,
                         width: MediaQuery.of(field.context).size.width,
-                        child: ListView(
-                          cacheExtent: 0.0,
-                          scrollDirection: Axis.vertical,
-                          controller: _scrollController,
-                          children: items.isNotEmpty
-                              ? ListTile.divideTiles(
-                                      context: field.context,
-                                      tiles: state._getChildren(state._items))
-                                  .toList()
-                              : [],
+                        child: Material(
+                          elevation: 5,
+                          child: Scrollbar(
+                            isAlwaysShown: true,
+                            controller: _scrollController,
+                            child: ListView(
+                              cacheExtent: 0.0,
+                              // scrollDirection: Axis.vertical,
+                              controller: _scrollController,
+                              children: items.isNotEmpty
+                                  ? ListTile.divideTiles(
+                                          context: field.context,
+                                          tiles:
+                                              state._getChildren(state._items))
+                                      .toList()
+                                  : [],
+                            ),
+                          ),
                         ),
                       ),
               ],
@@ -173,6 +175,7 @@ class DropDownSearch extends FormField<String> {
 class DropDownSearchState extends FormFieldState<String> {
   TextEditingController _controller;
   bool _showdropdown = false;
+  int _totalChanges = 2;
   bool _isSearching = true;
   String _searchText = "";
   bool _hasError = false;
@@ -228,7 +231,7 @@ class DropDownSearchState extends FormFieldState<String> {
 
     _effectiveController.addListener(_handleControllerChanged);
 
-    _searchText = _effectiveController.text;
+    // _searchText = _effectiveController.text;
     _focusNode = new FocusNode();
     _focusNode.addListener(_onOnFocusNodeEvent);
   }
@@ -256,16 +259,19 @@ class DropDownSearchState extends FormFieldState<String> {
   }
 
   Widget _getItem(String text) {
-    return GestureDetector(
+    return TextButton(
+      style: ButtonStyle(alignment: Alignment.centerLeft),
       child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Text(text, style: TextStyles.h6Regular(color: primaryColor))),
-      onTap: () {
+      onPressed: () {
         setState(() {
           _effectiveController.text = text;
           _handleControllerChanged();
           _showdropdown = false;
           _isSearching = false;
+          _searchText = "";
+          _totalChanges = 0;
           if (widget.onValueChanged != null) widget.onValueChanged(text);
         });
         FocusScope.of(context).requestFocus(new FocusNode());
@@ -282,6 +288,7 @@ class DropDownSearchState extends FormFieldState<String> {
   }
 
   _handleControllerChanged() {
+    print("Changes: $_totalChanges");
     if (_effectiveController.text != value)
       didChange(_effectiveController.text);
 
@@ -293,8 +300,11 @@ class DropDownSearchState extends FormFieldState<String> {
     } else {
       setState(() {
         _isSearching = true;
-        _searchText = _effectiveController.text;
-        _showdropdown = true;
+        _searchText = _focusNode.hasFocus && _totalChanges > 1
+            ? _effectiveController.text
+            : "";
+        _totalChanges = _totalChanges + 1;
+        // _showdropdown = true;
       });
     }
   }
@@ -306,6 +316,7 @@ class DropDownSearchState extends FormFieldState<String> {
     setState(() {
       _isSearching = _focusNode.hasFocus;
       _showdropdown = _focusNode.hasFocus;
+      _searchText = _focusNode.hasFocus ? _searchText : "";
     });
   }
 }
