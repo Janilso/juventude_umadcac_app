@@ -288,7 +288,6 @@ class DropDownSearchState extends FormFieldState<String> {
   }
 
   _handleControllerChanged() {
-    print("Changes: $_totalChanges");
     if (_effectiveController.text != value)
       didChange(_effectiveController.text);
 

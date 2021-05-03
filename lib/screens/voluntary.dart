@@ -18,16 +18,21 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   Validations _validate = Validations();
 
+  TextEditingController _ctlDepartamento = TextEditingController();
+  TextEditingController _ctlCongregacao = TextEditingController();
+  TextEditingController _ctlNome = TextEditingController();
   TextEditingController _ctlContato =
       MaskedTextController(mask: '(00) 00000-0000');
-  TextEditingController _ctlNome = TextEditingController();
 
   void validatorForm() {
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
       setState(() => _autovalidate = AutovalidateMode.always);
     } else {
-      print("Sendssss =>===== form");
+      print("Departamento: ${_ctlDepartamento.text}");
+      print("Congregação: ${_ctlCongregacao.text}");
+      print("Nome: ${_ctlNome.text}");
+      print("Contato: ${_ctlContato.text}");
     }
   }
 
@@ -44,6 +49,7 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
             child: Column(
               children: [
                 DropDownSearch(
+                  controller: _ctlDepartamento,
                   labelText: "Departamento",
                   items: [
                     "Comunicação",
@@ -56,6 +62,7 @@ class _VoluntaryScreamState extends State<VoluntaryScream> {
                   validator: _validate.defaultValidate,
                 ),
                 DropDownSearch(
+                  controller: _ctlCongregacao,
                   labelText: "Congregação",
                   items: CONSTANTS.CONGREGACOES,
                   icon: Feather.home,
