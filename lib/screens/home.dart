@@ -20,12 +20,12 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1000&h=2500&q=80'
 ];
 
-class HomeScream extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreamState createState() => _HomeScreamState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreamState extends State<HomeScream> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +69,7 @@ class _HomeScreamState extends State<HomeScream> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RepertoireScream()));
+                                builder: (context) => RepertoireScreen()));
                       },
                     ),
                     CardIconText(
@@ -80,7 +80,7 @@ class _HomeScreamState extends State<HomeScream> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => VoluntaryScream()));
+                                builder: (context) => VoluntaryScreen()));
                       },
                     ),
                     CardIconText(

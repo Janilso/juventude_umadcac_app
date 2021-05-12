@@ -7,19 +7,19 @@ import 'package:juventude_umadcac_app/screens/home.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   @override
-  _SplashPageState createState() => _SplashPageState();
+  _SplashScreen createState() => _SplashScreen();
 }
 
-class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
+class _SplashScreen extends State<SplashScreen> with TickerProviderStateMixin {
   @override
   void initState() {
     Timer(
         Duration(milliseconds: 2500),
         () => {
               Navigator.pushReplacement(context,
-                  CupertinoPageRoute(builder: (context) => HomeScream()))
+                  CupertinoPageRoute(builder: (context) => HomeScreen()))
             });
     super.initState();
   }

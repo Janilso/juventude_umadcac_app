@@ -2,24 +2,55 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_repertoire.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/models/repertorio.dart';
+import 'package:juventude_umadcac_app/screens/detail_hymn.dart';
+
+final String letra = '''
+Aviva-me!\n
+Espírito de Deus!\n
+Manifesta aqui\n
+Glória e poder\n
+(Glória e poder)\n
+\n
+Aviva-me!\n
+Espírito de Deus!\n
+Manifesta aqui\n
+Glória e poder\n
+(Glória e poder)\n
+\n
+Santo, tu és o primeiro\n
+És tudo que eu tenho\n
+Toma minha vida\n
+Espírito Santo, tu és o primeiro\n
+És tudo que tenho\n
+Toma minha vida\n
+(Glória e poder)\n
+\n
+Santo, tu és o primeiro
+És tudo que eu tenho\n
+Toma minha vida\n
+Espírito Santo, tu és o primeiro\n
+És tudo que tenho\n
+Toma minha vida\n
+(Glória e poder)\n
+''';
 
 final List<Hino> hinos = [
-  Hino(nome: "Aviva-me!", autoria: "Jéssica Augusto"),
-  Hino(nome: "Sou mais", autoria: "Jéssica Augusto "),
-  Hino(nome: "Medley", autoria: "Auto desconhecido"),
-  Hino(nome: "Todavia Me Alegrarei", autoria: "Leandro Soares"),
-  Hino(nome: "Algo Novo", autoria: "Kemuel"),
-  Hino(nome: "Aba", autoria: "Kemuel"),
-  Hino(nome: "Ousado Amor", autoria: "Isaias Saad"),
-  Hino(nome: "Fica Tranquilo", autoria: "Kemilly Santos"),
+  Hino(nome: "Aviva-me!", autoria: "Jéssica Augusto", letra: letra),
+  Hino(nome: "Sou mais", autoria: "Jéssica Augusto ", letra: letra),
+  Hino(nome: "Medley", autoria: "Auto desconhecido", letra: letra),
+  Hino(nome: "Todavia Me Alegrarei", autoria: "Leandro Soares", letra: letra),
+  Hino(nome: "Algo Novo", autoria: "Kemuel", letra: letra),
+  Hino(nome: "Aba", autoria: "Kemuel", letra: letra),
+  Hino(nome: "Ousado Amor", autoria: "Isaias Saad", letra: letra),
+  Hino(nome: "Fica Tranquilo", autoria: "Kemilly Santos", letra: letra),
 ];
 
-class RepertoireScream extends StatefulWidget {
+class RepertoireScreen extends StatefulWidget {
   @override
-  RepertoireScreamState createState() => RepertoireScreamState();
+  RepertoireScreenState createState() => RepertoireScreenState();
 }
 
-class RepertoireScreamState extends State<RepertoireScream> {
+class RepertoireScreenState extends State<RepertoireScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +72,12 @@ class RepertoireScreamState extends State<RepertoireScream> {
                     title: hino.nome,
                     subtitle: hino.autoria,
                     onTap: () {
-                      print("tesdsad");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailHymnScreen(
+                                    hino: hino,
+                                  )));
                     },
                   ),
                 );

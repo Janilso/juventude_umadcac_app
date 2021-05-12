@@ -75,6 +75,7 @@ const Color beige = _beige;
 const Color purple = _purple;
 const Color blue = _blue;
 const Color pink = _pink;
+const Color orangeExtraLight = _orangeExtraLight;
 
 /* 
  * Colors Name
@@ -86,6 +87,7 @@ const Color _blueLight = Color(0xFF55A7D9);
 const Color _blue = Color(0xFF2D6DB4);
 const Color _blueDark = Color(0xFF002D63);
 const Color _yellow = Color(0xFFFFE470);
+const Color _orangeExtraLight = Color(0xFFFBDEB2);
 const Color _orangeLight = Color(0xFFFFC473);
 const Color _orange = Color(0xFFF29200);
 const Color _redExtraLight = Color(0xFFFFF9F9);
