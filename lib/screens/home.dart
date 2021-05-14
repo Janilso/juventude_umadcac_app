@@ -7,6 +7,7 @@ import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/versicle_day.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
+import 'package:juventude_umadcac_app/screens/repertoire.dart';
 import 'package:juventude_umadcac_app/screens/voluntary.dart';
 import 'package:juventude_umadcac_app/theme/style.dart';
 
@@ -19,12 +20,12 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1000&h=2500&q=80'
 ];
 
-class HomeScream extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreamState createState() => _HomeScreamState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreamState extends State<HomeScream> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +57,7 @@ class _HomeScreamState extends State<HomeScream> {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => CalendarScreen()));
                       },
                     ),
@@ -64,7 +65,12 @@ class _HomeScreamState extends State<HomeScream> {
                       icon: Feather.music,
                       iconColor: purple,
                       text: "Repertório",
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => RepertoireScreen()));
+                      },
                     ),
                     CardIconText(
                       icon: Feather.award,
@@ -73,8 +79,8 @@ class _HomeScreamState extends State<HomeScream> {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => VoluntaryScream()));
+                            CupertinoPageRoute(
+                                builder: (context) => VoluntaryScreen()));
                       },
                     ),
                     CardIconText(
@@ -84,7 +90,7 @@ class _HomeScreamState extends State<HomeScream> {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => AboutScreen()));
                       },
                     ),

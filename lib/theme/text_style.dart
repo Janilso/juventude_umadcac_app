@@ -140,4 +140,18 @@ class TextStyles {
       height: 1.5,
     );
   }
+
+  static TextStyle customAll(
+      {Color color: Colors.white,
+      double fontSize: 18,
+      FontWeight fontWeight: FontWeight.w400,
+      double height: 1.5}) {
+    return TextStyle(
+      fontFamily: "Baloo",
+      color: color,
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      height: height,
+    );
+  }
 }

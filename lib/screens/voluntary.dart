@@ -8,12 +8,12 @@ import 'package:juventude_umadcac_app/components/input_text.dart';
 import 'package:juventude_umadcac_app/utils/constants.dart';
 import 'package:juventude_umadcac_app/utils/validations.dart';
 
-class VoluntaryScream extends StatefulWidget {
+class VoluntaryScreen extends StatefulWidget {
   @override
-  _VoluntaryScreamState createState() => _VoluntaryScreamState();
+  _VoluntaryScreenState createState() => _VoluntaryScreenState();
 }
 
-class _VoluntaryScreamState extends State<VoluntaryScream> {
+class _VoluntaryScreenState extends State<VoluntaryScreen> {
   AutovalidateMode _autovalidate = AutovalidateMode.disabled;
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   Validations _validate = Validations();

@@ -59,6 +59,7 @@ const Color colorItemMenu = _blue;
 const Color red = _red;
 const Color redLight = _redLight;
 const Color redExtraLight = _redExtraLight;
+const Color yellowDark = _yellowDark;
 const Color yellow = _yellow;
 const Color blueLight = _blueLight;
 const Color orange = _orange;
@@ -75,6 +76,7 @@ const Color beige = _beige;
 const Color purple = _purple;
 const Color blue = _blue;
 const Color pink = _pink;
+const Color orangeExtraLight = _orangeExtraLight;
 
 /* 
  * Colors Name
@@ -85,7 +87,9 @@ const Color _blueExtraLight = Color(0xFFF3F6FF);
 const Color _blueLight = Color(0xFF55A7D9);
 const Color _blue = Color(0xFF2D6DB4);
 const Color _blueDark = Color(0xFF002D63);
+const Color _yellowDark = Color(0xFFFBD900);
 const Color _yellow = Color(0xFFFFE470);
+const Color _orangeExtraLight = Color(0xFFFBDEB2);
 const Color _orangeLight = Color(0xFFFFC473);
 const Color _orange = Color(0xFFF29200);
 const Color _redExtraLight = Color(0xFFFFF9F9);

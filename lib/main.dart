@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Juventude UMADCAC 2021 Novo',
       theme: appTheme,
-      home: SplashPage(),
+      home: SplashScreen(),
     );
   }
 }
