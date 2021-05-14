@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_empty.dart';
 import 'package:juventude_umadcac_app/components/card_loading.dart';
@@ -83,7 +84,7 @@ class RepertoireScreenState extends State<RepertoireScreen> {
                               onTap: () {
                                 Navigator.push(
                                     context,
-                                    MaterialPageRoute(
+                                    CupertinoPageRoute(
                                         builder: (context) => DetailHymnScreen(
                                               hino: hino,
                                             )));
