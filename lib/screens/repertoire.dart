@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:juventude_umadcac_app/components/card_empty.dart';
+import 'package:juventude_umadcac_app/components/card_loading.dart';
 import 'package:juventude_umadcac_app/components/card_repertoire.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/models/repertorio.dart';
@@ -58,32 +60,53 @@ class RepertoireScreenState extends State<RepertoireScreen> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(30),
-          child: ListView.separated(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: ScrollPhysics(),
-              separatorBuilder: (_, __) => Container(),
-              itemCount: hinos.length,
-              itemBuilder: (_, index) {
-                Hino hino = hinos[index];
-                return Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: CardRepertoire(
-                    title: hino.nome,
-                    subtitle: hino.autoria,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DetailHymnScreen(
-                                    hino: hino,
-                                  )));
-                    },
-                  ),
-                );
-              }),
+          child: FutureBuilder(
+            future: getFutureList(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                bool hasHinos = snapshot.data.length > 0;
+
+                return hasHinos
+                    ? ListView.separated(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        physics: ScrollPhysics(),
+                        separatorBuilder: (_, __) => Container(),
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (_, index) {
+                          Hino hino = snapshot.data[index];
+                          return Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                            child: CardRepertoire(
+                              title: hino.nome,
+                              subtitle: hino.autoria,
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailHymnScreen(
+                                              hino: hino,
+                                            )));
+                              },
+                            ),
+                          );
+                        })
+                    : CardEmpty(
+                        mensage: "Repertório Vazio",
+                      );
+              } else {
+                return CardLoading();
+              }
+            },
+          ),
         ),
       ),
     );
   }
+
+  Future<List<Hino>> getFutureList() async =>
+      await Future.delayed(Duration(seconds: 3), () {
+        return hinos;
+        // return [];
+      });
 }
