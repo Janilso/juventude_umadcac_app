@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:intl/intl.dart' show DateFormat;
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class CardEvent extends StatelessWidget {
   final String title;
@@ -23,7 +23,7 @@ class CardEvent extends StatelessWidget {
     Color _color = Colors.white;
 
     return ListTile(
-      title: Text(title, style: TextStyles.h3ExtraBold()),
+      title: Text(title, style: AppTextStyles.h3ExtraBold()),
       subtitle: Column(
         children: [
           Row(
@@ -35,7 +35,7 @@ class CardEvent extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 3),
                 child: Text(
                   _hours,
-                  style: TextStyles.h6Regular(
+                  style: AppTextStyles.h6Regular(
                     color: _color,
                   ),
                 ),
@@ -47,7 +47,7 @@ class CardEvent extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 2),
                 child: Text(
                   congregation.toUpperCase(),
-                  style: TextStyles.h6Regular(
+                  style: AppTextStyles.h6Regular(
                     color: _color,
                   ),
                 ),
@@ -65,7 +65,7 @@ class CardEvent extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 2),
                   child: Text(
                     address,
-                    style: TextStyles.h6Regular(color: _color),
+                    style: AppTextStyles.h6Regular(color: _color),
                   ),
                 ),
               ),

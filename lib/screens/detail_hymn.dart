@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/models/repertorio.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class DetailHymnScreen extends StatefulWidget {
   final Hino hino;
@@ -38,15 +38,15 @@ class _DetailHymnScreenState extends State<DetailHymnScreen> {
               ),
               SizedBox(height: 30),
               Text(widget.hino?.nome ?? '',
-                  style: TextStyles.h3Bold(color: AppColors.defaultColor)),
+                  style: AppTextStyles.h3Bold(color: AppColors.defaultColor)),
               Text(
                 widget.hino?.autoria ?? '',
-                style: TextStyles.h5Regular(color: AppColors.defaultColor),
+                style: AppTextStyles.h5Regular(color: AppColors.defaultColor),
               ),
               SizedBox(height: 30),
               Text(
                 widget.hino?.letra ?? '',
-                style: TextStyles.customAll(
+                style: AppTextStyles.customAll(
                     color: AppColors.defaultColor,
                     fontSize: _fontSize,
                     fontWeight: FontWeight.w600,

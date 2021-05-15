@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TextStyles {
+class AppTextStyles {
   static TextStyle h2Bold({Color color: Colors.white}) {
     return TextStyle(
       fontFamily: "Baloo",

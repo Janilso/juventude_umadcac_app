@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class CardJobTitles extends StatelessWidget {
   final String jobTitle;
@@ -41,13 +41,13 @@ class CardJobTitles extends StatelessWidget {
             SizedBox(height: 15),
             Text(
               jobTitle ?? '',
-              style: TextStyles.h6Bold(),
+              style: AppTextStyles.h6Bold(),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 15),
             Text(
               name ?? '',
-              style: TextStyles.h6Regular(),
+              style: AppTextStyles.h6Regular(),
               textAlign: TextAlign.center,
             ),
           ],

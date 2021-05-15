@@ -5,7 +5,7 @@ import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_calendar.dart';
 import 'package:juventude_umadcac_app/models/evento.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -224,7 +224,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             padding: const EdgeInsets.only(top: 7),
             child: Text(
               description,
-              style: TextStyles.h5Medium(color: AppColors.defaultColor),
+              style: AppTextStyles.h5Medium(color: AppColors.defaultColor),
             ),
           )
         ],

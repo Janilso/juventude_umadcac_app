@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class InputText extends StatefulWidget {
   final String labelText;
@@ -79,7 +79,7 @@ class _InputTextState extends State<InputText> {
         autocorrect: false,
         autofocus: false,
         focusNode: _focusNode,
-        style: TextStyles.h4Regular(
+        style: AppTextStyles.h4Regular(
             color: _hasError ? AppColors.red : AppColors.primary),
         cursorColor: AppColors.primary,
         decoration: InputDecoration(
@@ -92,7 +92,7 @@ class _InputTextState extends State<InputText> {
           enabledBorder: _builderBorderUnderline(
               widget.withBorder ? AppColors.grey : Colors.transparent),
           errorBorder: _builderBorderUnderline(AppColors.red),
-          errorStyle: TextStyles.paragraphRegular(color: AppColors.red),
+          errorStyle: AppTextStyles.paragraphRegular(color: AppColors.red),
           prefixIcon: widget.icon != null
               ? Icon(
                   widget.icon,
@@ -104,7 +104,7 @@ class _InputTextState extends State<InputText> {
                 )
               : null,
           labelText: widget.labelText,
-          labelStyle: TextStyles.h4Regular(
+          labelStyle: AppTextStyles.h4Regular(
               color: _hasError ? AppColors.red : AppColors.blue),
         ),
       ),

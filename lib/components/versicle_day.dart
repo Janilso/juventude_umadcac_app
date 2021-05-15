@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class VersicleDay extends StatelessWidget {
@@ -34,7 +34,7 @@ class VersicleDay extends StatelessWidget {
                   margin: EdgeInsets.only(top: 35, bottom: 20),
                   child: Text(
                     "VERSÍCULO DO DIA",
-                    style: TextStyles.h2Bold(),
+                    style: AppTextStyles.h2Bold(),
                   ),
                 ),
                 Container(
@@ -48,15 +48,15 @@ class VersicleDay extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 15),
                       child: Text(
                         '"Escrevei, pois, aos judeus, como parecer bem aos vossos olhos, em nome do rei, e selai-o com o anel do rei; porque o documento que se escreve em nome do rei, e que se sela com o anel do rei, não se pode revogar."',
-                        style: TextStyles.h4SemiBold(
+                        style: AppTextStyles.h4SemiBold(
                             color: AppColors.defaultColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
                     subtitle: Text(
                       "Romanos, 12.5",
-                      style:
-                          TextStyles.h5Regular(color: AppColors.defaultColor),
+                      style: AppTextStyles.h5Regular(
+                          color: AppColors.defaultColor),
                       textAlign: TextAlign.center,
                     ),
                   ),

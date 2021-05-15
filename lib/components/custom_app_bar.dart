@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -38,7 +38,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
                   title,
-                  style: TextStyles.h3SemiBold(),
+                  style: AppTextStyles.h3SemiBold(),
                 ),
               )
             : Image.asset(

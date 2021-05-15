@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class CardIconText extends StatelessWidget {
   final IconData icon;
@@ -38,7 +38,7 @@ class CardIconText extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               text ?? '',
-              style: TextStyles.h5Regular(color: AppColors.itemMenu),
+              style: AppTextStyles.h5Regular(color: AppColors.itemMenu),
               textAlign: TextAlign.center,
             )
           ],

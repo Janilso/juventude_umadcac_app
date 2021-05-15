@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class CardRepertoire extends StatelessWidget {
   final IconData iconRight;
@@ -41,9 +41,9 @@ class CardRepertoire extends StatelessWidget {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: TextStyles.h5Bold()),
+              Text(title, style: AppTextStyles.h5Bold()),
               SizedBox(height: 2),
-              Text(subtitle, style: TextStyles.h5Regular())
+              Text(subtitle, style: AppTextStyles.h5Regular())
             ],
           ),
           trailing: Container(

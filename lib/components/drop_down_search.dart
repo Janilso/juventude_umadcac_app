@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class DropDownSearch extends FormField<String> {
   final String labelText;
@@ -52,7 +52,7 @@ class DropDownSearch extends FormField<String> {
               enabledBorder: state._builderBorderUnderline(
                   withBorder ? AppColors.grey : Colors.transparent),
               errorBorder: state._builderBorderUnderline(AppColors.red),
-              errorStyle: TextStyles.paragraphRegular(color: AppColors.red),
+              errorStyle: AppTextStyles.paragraphRegular(color: AppColors.red),
               prefixIcon: icon != null
                   ? Icon(
                       icon,
@@ -64,7 +64,7 @@ class DropDownSearch extends FormField<String> {
                     )
                   : null,
               labelText: labelText,
-              labelStyle: TextStyles.h4Regular(
+              labelStyle: AppTextStyles.h4Regular(
                   color: state._hasError ? AppColors.red : AppColors.blue),
               suffixIcon: IconButton(
                   icon: Icon(
@@ -122,7 +122,7 @@ class DropDownSearch extends FormField<String> {
                           autocorrect: false,
                           autofocus: false,
                           focusNode: state._focusNode,
-                          style: TextStyles.h4Regular(
+                          style: AppTextStyles.h4Regular(
                               color: state._hasError
                                   ? AppColors.red
                                   : AppColors.primary),
@@ -267,7 +267,7 @@ class DropDownSearchState extends FormFieldState<String> {
       child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Text(text,
-              style: TextStyles.h6Regular(color: AppColors.primary))),
+              style: AppTextStyles.h6Regular(color: AppColors.primary))),
       onPressed: () {
         setState(() {
           _effectiveController.text = text;

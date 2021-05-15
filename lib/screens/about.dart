@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/card_job_titles.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -26,8 +26,8 @@ class _AboutScreenState extends State<AboutScreen> {
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: RichText(
                   text: TextSpan(
-                    style:
-                        TextStyles.textReading(color: AppColors.defaultColor),
+                    style: AppTextStyles.textReading(
+                        color: AppColors.defaultColor),
                     children: [
                       TextSpan(
                           text:
@@ -39,7 +39,7 @@ class _AboutScreenState extends State<AboutScreen> {
               SizedBox(height: 20),
               Text(
                 'Sua diretoria é composta por:',
-                style: TextStyles.h4SemiBold(color: AppColors.defaultColor),
+                style: AppTextStyles.h4SemiBold(color: AppColors.defaultColor),
               ),
               _buildListJobTitles(),
               SizedBox(height: 20),
@@ -47,7 +47,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: RichText(
                     text: TextSpan(
-                        style: TextStyles.textReading(
+                        style: AppTextStyles.textReading(
                             color: AppColors.defaultColor),
                         children: [
                       TextSpan(

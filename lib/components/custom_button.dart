@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
-import 'package:juventude_umadcac_app/theme/text_style.dart';
+import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
                   padding: EdgeInsets.only(top: 4),
                   child: Text(
                     "$text",
-                    style: TextStyles.h4Regular(),
+                    style: AppTextStyles.h4Regular(),
                     textAlign: TextAlign.center,
                   ),
                 ),
