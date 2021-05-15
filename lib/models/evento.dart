@@ -1,4 +1,4 @@
-Evento listAlunoFromJson(List<dynamic> str) => Evento.fromJson(str.first);
+// Evento listAlunoFromJson(List<dynamic> str) => Evento.fromJson(str.first);
 
 class Evento {
   String titulo;
