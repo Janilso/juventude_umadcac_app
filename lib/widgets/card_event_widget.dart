@@ -3,13 +3,13 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class CardEvent extends StatelessWidget {
+class CardEventWidget extends StatelessWidget {
   final String title;
   final DateTime hours;
   final String congregation;
   final String address;
 
-  const CardEvent({
+  const CardEventWidget({
     Key key,
     this.title,
     this.hours,

@@ -6,12 +6,12 @@ import 'package:juventude_umadcac_app/utils/imagens.dart';
 import 'package:package_info/package_info.dart';
 import 'package:scroll_shadow_container/scroll_shadow_container.dart';
 
-class DrawerMenu extends StatefulWidget {
+class DrawerMenuWidget extends StatefulWidget {
   @override
-  _DrawerMenuState createState() => _DrawerMenuState();
+  _DrawerMenuWidgetState createState() => _DrawerMenuWidgetState();
 }
 
-class _DrawerMenuState extends State<DrawerMenu> {
+class _DrawerMenuWidgetState extends State<DrawerMenuWidget> {
   PackageInfo packageInfo = PackageInfo(
     appName: null,
     packageName: null,

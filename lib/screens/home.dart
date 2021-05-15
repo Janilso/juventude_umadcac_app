@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/components/card_icon_text.dart';
-import 'package:juventude_umadcac_app/components/carousel_images.dart';
-import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/versicle_day.dart';
+import 'package:juventude_umadcac_app/widgets/card_icon_text_widget.dart';
+import 'package:juventude_umadcac_app/widgets/carousel_images_widget.dart';
+import 'package:juventude_umadcac_app/widgets/app_bar_widget.dart';
+import 'package:juventude_umadcac_app/widgets/versicle_day_widget.dart';
 import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
 import 'package:juventude_umadcac_app/screens/repertoire.dart';
@@ -29,16 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: AppBarWidget(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.only(top: 30, bottom: 20),
               color: AppColors.bgSlider,
-              child: CarouselImages(images: imgList),
+              child: CarouselImagesWidget(images: imgList),
             ),
-            VersicleDay(),
+            VersicleDayWidget(),
             Center(
               child: Container(
                 child: GridView.count(
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding:
                       EdgeInsets.only(top: 20, left: 50, right: 50, bottom: 40),
                   children: [
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.calendar,
                       text: "Agenda",
                       onTap: () {
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => CalendarScreen()));
                       },
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.music,
                       iconColor: AppColors.purple,
                       text: "Repertório",
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => RepertoireScreen()));
                       },
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.award,
                       iconColor: AppColors.yellow,
                       text: "Ser Voluntário",
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => VoluntaryScreen()));
                       },
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.info,
                       iconColor: AppColors.blueLight,
                       text: "Sobre",
@@ -94,19 +94,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => AboutScreen()));
                       },
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.message_circle,
                       iconColor: AppColors.green,
                       text: "Fale Conosco",
                       onTap: () {},
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.file_text,
                       iconColor: AppColors.blue,
                       text: "Política de Privacidade",
                       onTap: () {},
                     ),
-                    CardIconText(
+                    CardIconTextWidget(
                       icon: Feather.file_text,
                       iconColor: AppColors.blue,
                       text: "Termos de Uso",

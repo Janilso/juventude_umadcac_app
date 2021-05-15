@@ -4,11 +4,11 @@ import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class CardEmpty extends StatelessWidget {
+class EmptyWidget extends StatelessWidget {
   final String mensage;
   final double heightFactor;
 
-  const CardEmpty({Key key, this.mensage = "Vazio", this.heightFactor = 3})
+  const EmptyWidget({Key key, this.mensage = "Vazio", this.heightFactor = 3})
       : super(key: key);
 
   @override

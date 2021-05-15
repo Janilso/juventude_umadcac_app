@@ -2,20 +2,20 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/components/dialog_full_scream.dart';
+import 'package:juventude_umadcac_app/widgets/dialog_full_scream_widget.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:photo_view/photo_view.dart';
 
-class CarouselImages extends StatefulWidget {
+class CarouselImagesWidget extends StatefulWidget {
   final List<String> images;
 
-  const CarouselImages({Key key, this.images}) : super(key: key);
+  const CarouselImagesWidget({Key key, this.images}) : super(key: key);
 
   @override
-  _CarouselImagesState createState() => _CarouselImagesState();
+  _CarouselImagesWidgetState createState() => _CarouselImagesWidgetState();
 }
 
-class _CarouselImagesState extends State<CarouselImages> {
+class _CarouselImagesWidgetState extends State<CarouselImagesWidget> {
   int _current = 0;
 
   @override
@@ -47,7 +47,7 @@ class _CarouselImagesState extends State<CarouselImages> {
   Widget buildItem(item) {
     return GestureDetector(
       onTap: () async {
-        Navigator.of(context).push(DialogFullScream(buildPoupUp(item)));
+        Navigator.of(context).push(DialogFullScreamWidget(buildPoupUp(item)));
         // await showDialog(context: context, builder: (_) => buildPoupUp(item));
       },
       child: Container(

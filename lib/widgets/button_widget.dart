@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class CustomButton extends StatelessWidget {
+class ButtonWidget extends StatelessWidget {
   final String text;
   final GestureTapCallback onPressed;
   final IconData icon;
   final double width;
 
-  const CustomButton(
+  const ButtonWidget(
       {Key key, this.text, this.onPressed, this.icon, this.width})
       : super(key: key);
 

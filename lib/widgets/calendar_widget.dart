@@ -4,18 +4,18 @@ import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
-class CustomCalendar extends StatefulWidget {
+class CalendarWidget extends StatefulWidget {
   final Map<DateTime, List<dynamic>> events;
   final Function(DateTime, List<dynamic>, List<dynamic>) onDaySelected;
 
-  const CustomCalendar({Key key, @required this.events, this.onDaySelected})
+  const CalendarWidget({Key key, @required this.events, this.onDaySelected})
       : super(key: key);
 
   @override
-  _CustomCalendarState createState() => _CustomCalendarState();
+  _CalendarWidgetState createState() => _CalendarWidgetState();
 }
 
-class _CustomCalendarState extends State<CustomCalendar> {
+class _CalendarWidgetState extends State<CalendarWidget> {
   CalendarController _calendarController;
 
   @override

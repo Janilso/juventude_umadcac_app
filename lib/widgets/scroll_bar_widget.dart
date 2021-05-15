@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 const double _kScrollbarThickness = 6.0;
 
-class CustomScrollBar extends StatefulWidget {
+class ScrollBarWidget extends StatefulWidget {
   final ScrollableWidgetBuilder builder;
   final ScrollController scrollController;
   final Color color;
 
-  const CustomScrollBar({
+  const ScrollBarWidget({
     Key key,
     this.scrollController,
     this.color,
@@ -16,10 +16,10 @@ class CustomScrollBar extends StatefulWidget {
         super(key: key);
 
   @override
-  _CustomScrollBarState createState() => _CustomScrollBarState();
+  _ScrollBarWidgetState createState() => _ScrollBarWidgetState();
 }
 
-class _CustomScrollBarState extends State<CustomScrollBar> {
+class _ScrollBarWidgetState extends State<ScrollBarWidget> {
   ScrollbarPainter _scrollbarPainter;
   ScrollController _scrollController;
   Orientation _orientation;
@@ -79,7 +79,7 @@ class _CustomScrollBarState extends State<CustomScrollBar> {
   }
 
   @override
-  void didUpdateWidget(CustomScrollBar oldWidget) {
+  void didUpdateWidget(ScrollBarWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
     _updateScrollPainter(_scrollController.position);
   }

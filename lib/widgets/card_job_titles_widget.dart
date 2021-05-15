@@ -4,11 +4,12 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class CardJobTitles extends StatelessWidget {
+class CardJobTitlesWidget extends StatelessWidget {
   final String jobTitle;
   final String name;
 
-  const CardJobTitles({Key key, @required this.jobTitle, @required this.name})
+  const CardJobTitlesWidget(
+      {Key key, @required this.jobTitle, @required this.name})
       : super(key: key);
 
   @override

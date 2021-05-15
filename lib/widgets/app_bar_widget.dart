@@ -4,13 +4,13 @@ import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
   @override
   final Size preferredSize;
 
-  const CustomAppBar({Key key, this.title})
+  const AppBarWidget({Key key, this.title})
       : preferredSize = const Size.fromHeight(60.0);
 
   @override

@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class CardIconText extends StatelessWidget {
+class CardIconTextWidget extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String text;
   final GestureTapCallback onTap;
 
-  const CardIconText({
+  const CardIconTextWidget({
     Key key,
     @required this.icon,
     this.iconColor = Colors.red,

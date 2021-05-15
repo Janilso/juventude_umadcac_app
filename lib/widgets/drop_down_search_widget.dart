@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class DropDownSearch extends FormField<String> {
+class DropDownSearchWidget extends FormField<String> {
   final String labelText;
   final IconData icon;
   final bool withBorder;
@@ -19,7 +19,7 @@ class DropDownSearch extends FormField<String> {
   final ValueChanged<dynamic> onValueChanged;
   final int itemsVisibleInDropdown;
 
-  DropDownSearch({
+  DropDownSearchWidget({
     Key key,
     @required this.labelText,
     this.icon,
@@ -39,7 +39,7 @@ class DropDownSearch extends FormField<String> {
           initialValue: controller != null ? controller.text : '',
           onSaved: setter,
           builder: (FormFieldState<String> field) {
-            final DropDownSearchState state = field;
+            final DropDownSearchWidgetState state = field;
             final ScrollController _scrollController = ScrollController();
             final InputDecoration effectiveDecoration = InputDecoration(
               filled: true,
@@ -172,10 +172,10 @@ class DropDownSearch extends FormField<String> {
         );
 
   @override
-  DropDownSearchState createState() => DropDownSearchState();
+  DropDownSearchWidgetState createState() => DropDownSearchWidgetState();
 }
 
-class DropDownSearchState extends FormFieldState<String> {
+class DropDownSearchWidgetState extends FormFieldState<String> {
   TextEditingController _controller;
   bool _showdropdown = false;
   int _totalChanges = 2;
@@ -185,7 +185,7 @@ class DropDownSearchState extends FormFieldState<String> {
   FocusNode _focusNode;
 
   @override
-  DropDownSearch get widget => super.widget;
+  DropDownSearchWidget get widget => super.widget;
   TextEditingController get _effectiveController =>
       widget.controller ?? _controller;
 
@@ -200,7 +200,7 @@ class DropDownSearchState extends FormFieldState<String> {
   }
 
   @override
-  void didUpdateWidget(DropDownSearch oldWidget) {
+  void didUpdateWidget(DropDownSearchWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (widget.controller != oldWidget.controller) {

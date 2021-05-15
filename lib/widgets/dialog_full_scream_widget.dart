@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DialogFullScream extends ModalRoute {
+class DialogFullScreamWidget extends ModalRoute {
   final Widget child;
-  DialogFullScream(this.child);
+  DialogFullScreamWidget(this.child);
 
   @override
   Color get barrierColor => Colors.black.withOpacity(0.5);

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/components/effect_curve.dart';
+import 'package:juventude_umadcac_app/widgets/effect_curve_widget.dart';
 import 'package:juventude_umadcac_app/screens/home.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
@@ -32,7 +32,7 @@ class _SplashScreen extends State<SplashScreen> with TickerProviderStateMixin {
         alignment: AlignmentDirectional.center,
         children: [
           Center(
-            child: EffectCurve(
+            child: EffectCurveWidget(
               child: Container(
                 width: 200,
                 child: Image.asset(ImagesAssets.logoVW),

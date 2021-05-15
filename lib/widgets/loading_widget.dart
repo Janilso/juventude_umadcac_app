@@ -3,16 +3,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class CardLoading extends StatefulWidget {
+class LoadingWidget extends StatefulWidget {
   final double heightFactor;
 
-  const CardLoading({Key key, this.heightFactor = 4}) : super(key: key);
+  const LoadingWidget({Key key, this.heightFactor = 4}) : super(key: key);
 
   @override
-  _CardLoadingState createState() => _CardLoadingState();
+  _LoadingWidgetState createState() => _LoadingWidgetState();
 }
 
-class _CardLoadingState extends State<CardLoading>
+class _LoadingWidgetState extends State<LoadingWidget>
     with TickerProviderStateMixin {
   AnimationController _rotationController;
   AnimationController _rotationCtlCircles;

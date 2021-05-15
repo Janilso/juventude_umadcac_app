@@ -3,14 +3,14 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class CardRepertoire extends StatelessWidget {
+class CardRepertoireWidget extends StatelessWidget {
   final IconData iconRight;
   final IconData iconLeft;
   final String title;
   final String subtitle;
   final Function onTap;
 
-  const CardRepertoire({
+  const CardRepertoireWidget({
     Key key,
     this.iconRight = Feather.music,
     this.iconLeft = Feather.chevron_right,

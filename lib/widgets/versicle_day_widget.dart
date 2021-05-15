@@ -4,7 +4,7 @@ import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
-class VersicleDay extends StatelessWidget {
+class VersicleDayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(

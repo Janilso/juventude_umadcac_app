@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
-import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/custom_button.dart';
-import 'package:juventude_umadcac_app/components/drop_down_search.dart';
-import 'package:juventude_umadcac_app/components/input_text.dart';
+import 'package:juventude_umadcac_app/widgets/app_bar_widget.dart';
+import 'package:juventude_umadcac_app/widgets/button_widget.dart';
+import 'package:juventude_umadcac_app/widgets/drop_down_search_widget.dart';
+import 'package:juventude_umadcac_app/widgets/input_widget.dart';
 import 'package:juventude_umadcac_app/utils/constants.dart';
 import 'package:juventude_umadcac_app/utils/validations.dart';
 
@@ -39,7 +39,7 @@ class _VoluntaryScreenState extends State<VoluntaryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "SER VOLUNTÁRIO"),
+      appBar: AppBarWidget(title: "SER VOLUNTÁRIO"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(30),
@@ -48,7 +48,7 @@ class _VoluntaryScreenState extends State<VoluntaryScreen> {
             autovalidateMode: _autovalidate,
             child: Column(
               children: [
-                DropDownSearch(
+                DropDownSearchWidget(
                   controller: _ctlDepartamento,
                   labelText: "Departamento",
                   items: [
@@ -61,20 +61,20 @@ class _VoluntaryScreenState extends State<VoluntaryScreen> {
                   icon: Feather.users,
                   validator: _validate.defaultValidate,
                 ),
-                DropDownSearch(
+                DropDownSearchWidget(
                   controller: _ctlCongregacao,
                   labelText: "Congregação",
                   items: CONSTANTS.CONGREGACOES,
                   icon: Feather.home,
                   validator: _validate.defaultValidate,
                 ),
-                InputText(
+                InputWidget(
                   controller: _ctlNome,
                   validator: _validate.defaultValidate,
                   labelText: "Nome *",
                   icon: Feather.bookmark,
                 ),
-                InputText(
+                InputWidget(
                   controller: _ctlContato,
                   validator: _validate.celular,
                   labelText: "Contato (WhatsApp) *",
@@ -82,7 +82,7 @@ class _VoluntaryScreenState extends State<VoluntaryScreen> {
                   keyboardType: TextInputType.number,
                 ),
                 SizedBox(height: 30),
-                CustomButton(
+                ButtonWidget(
                   text: "ENVIAR",
                   onPressed: () {
                     validatorForm();

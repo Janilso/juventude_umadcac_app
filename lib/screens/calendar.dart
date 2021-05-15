@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/components/card_event.dart';
-import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
-import 'package:juventude_umadcac_app/components/custom_calendar.dart';
+import 'package:juventude_umadcac_app/widgets/card_event_widget.dart';
+import 'package:juventude_umadcac_app/widgets/app_bar_widget.dart';
+import 'package:juventude_umadcac_app/widgets/calendar_widget.dart';
 import 'package:juventude_umadcac_app/models/evento.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
@@ -152,7 +152,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _sizeScreen = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(title: 'AGENDA'),
+      appBar: AppBarWidget(title: 'AGENDA'),
       body: SlidingUpPanel(
         parallaxEnabled: true,
         parallaxOffset: .5,
@@ -176,7 +176,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               SizedBox(height: 10),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
-                child: CustomCalendar(
+                child: CalendarWidget(
                     events: _events, onDaySelected: _onDaySelected),
               ),
               SizedBox(height: 20),
@@ -266,7 +266,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 Evento evento = _selectedEvents[index];
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: CardEvent(
+                  child: CardEventWidget(
                     title: evento.titulo,
                     hours: evento.horario,
                     congregation: evento.congregacao,

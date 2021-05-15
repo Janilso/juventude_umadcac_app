@@ -9,12 +9,12 @@ enum KindOfAnimation {
   repeatAndreverse,
 }
 
-class EffectCurve extends StatefulWidget {
+class EffectCurveWidget extends StatefulWidget {
   final Widget child;
   final Duration duration;
   final KindOfAnimation kindOfAnim;
 
-  const EffectCurve({
+  const EffectCurveWidget({
     Key key,
     this.child,
     this.duration = const Duration(seconds: 1),
@@ -22,10 +22,10 @@ class EffectCurve extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _EffectCurveState createState() => _EffectCurveState();
+  _EffectCurveWidgetState createState() => _EffectCurveWidgetState();
 }
 
-class _EffectCurveState extends State<EffectCurve>
+class _EffectCurveWidgetState extends State<EffectCurveWidget>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   static final linearTween = Tween<double>(begin: 0, end: 1);

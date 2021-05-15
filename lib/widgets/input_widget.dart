@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 
-class InputText extends StatefulWidget {
+class InputWidget extends StatefulWidget {
   final String labelText;
   final IconData icon;
   final bool withBorder;
@@ -12,7 +12,7 @@ class InputText extends StatefulWidget {
   final FormFieldValidator<String> validator;
   final bool enabled;
 
-  const InputText(
+  const InputWidget(
       {Key key,
       @required this.labelText,
       this.icon,
@@ -25,10 +25,10 @@ class InputText extends StatefulWidget {
       : super(key: key);
 
   @override
-  _InputTextState createState() => _InputTextState();
+  _InputWidgetState createState() => _InputWidgetState();
 }
 
-class _InputTextState extends State<InputText> {
+class _InputWidgetState extends State<InputWidget> {
   FocusNode _focusNode;
   bool _hasError = false;
 

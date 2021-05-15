@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/components/card_empty.dart';
-import 'package:juventude_umadcac_app/components/card_loading.dart';
-import 'package:juventude_umadcac_app/components/card_repertoire.dart';
-import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
+import 'package:juventude_umadcac_app/widgets/empty_widget.dart';
+import 'package:juventude_umadcac_app/widgets/loading_widget.dart';
+import 'package:juventude_umadcac_app/widgets/card_repertoire_widget.dart';
+import 'package:juventude_umadcac_app/widgets/app_bar_widget.dart';
 import 'package:juventude_umadcac_app/models/repertorio.dart';
 import 'package:juventude_umadcac_app/screens/detail_hymn.dart';
 
@@ -57,7 +57,7 @@ class RepertoireScreenState extends State<RepertoireScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "REPERTÓRIO"),
+      appBar: AppBarWidget(title: "REPERTÓRIO"),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(30),
@@ -78,7 +78,7 @@ class RepertoireScreenState extends State<RepertoireScreen> {
                           Hino hino = snapshot.data[index];
                           return Container(
                             margin: EdgeInsets.only(bottom: 20),
-                            child: CardRepertoire(
+                            child: CardRepertoireWidget(
                               title: hino.nome,
                               subtitle: hino.autoria,
                               onTap: () {
@@ -92,11 +92,11 @@ class RepertoireScreenState extends State<RepertoireScreen> {
                             ),
                           );
                         })
-                    : CardEmpty(
+                    : EmptyWidget(
                         mensage: "Repertório Vazio",
                       );
               } else {
-                return CardLoading();
+                return LoadingWidget();
               }
             },
           ),

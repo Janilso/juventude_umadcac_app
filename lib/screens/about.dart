@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/components/card_job_titles.dart';
-import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
+import 'package:juventude_umadcac_app/widgets/card_job_titles_widget.dart';
+import 'package:juventude_umadcac_app/widgets/app_bar_widget.dart';
 import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/app_text_styles.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
@@ -15,7 +15,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "SOBRE"),
+      appBar: AppBarWidget(title: "SOBRE"),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(30),
@@ -75,21 +75,21 @@ class _AboutScreenState extends State<AboutScreen> {
           childAspectRatio: 0.8,
           padding: EdgeInsets.only(top: 20),
           children: [
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Pr. Presidente",
                 name: "José Wellington Bezerra da Costa"),
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Pr. Setorial", name: "João Barbosa da Silva"),
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Coordenação Geral",
                 name: "Pr. Lélis Washington Marinhos"),
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Coordenação Regional ABCD",
                 name: "Pr. Deoclécio Martins"),
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Sub Coordenação Regional",
                 name: "Pr. Marcelo Ferreira"),
-            CardJobTitles(
+            CardJobTitlesWidget(
                 jobTitle: "Coordenação Setorial",
                 name: "Dc. Jefferson de Oliveira e Pr. Waldir Ferreira"),
           ],
