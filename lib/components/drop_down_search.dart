@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class DropDownSearch extends FormField<String> {
@@ -44,36 +44,37 @@ class DropDownSearch extends FormField<String> {
             final InputDecoration effectiveDecoration = InputDecoration(
               filled: true,
               hintText: hintText,
-              fillColor: state._hasError ? redExtraLight : Colors.white,
+              fillColor:
+                  state._hasError ? AppColors.redExtraLight : Colors.white,
               border: state._builderBorderUnderline(Colors.transparent),
-              focusedErrorBorder: state._builderBorderUnderline(red),
-              focusedBorder: state._builderBorderUnderline(primaryColor),
+              focusedErrorBorder: state._builderBorderUnderline(AppColors.red),
+              focusedBorder: state._builderBorderUnderline(AppColors.primary),
               enabledBorder: state._builderBorderUnderline(
-                  withBorder ? grey : Colors.transparent),
-              errorBorder: state._builderBorderUnderline(red),
-              errorStyle: TextStyles.paragraphRegular(color: red),
+                  withBorder ? AppColors.grey : Colors.transparent),
+              errorBorder: state._builderBorderUnderline(AppColors.red),
+              errorStyle: TextStyles.paragraphRegular(color: AppColors.red),
               prefixIcon: icon != null
                   ? Icon(
                       icon,
                       color: state._hasError
-                          ? red
+                          ? AppColors.red
                           : state._showdropdown
-                              ? primaryColor
-                              : blue,
+                              ? AppColors.primary
+                              : AppColors.blue,
                     )
                   : null,
               labelText: labelText,
-              labelStyle:
-                  TextStyles.h4Regular(color: state._hasError ? red : blue),
+              labelStyle: TextStyles.h4Regular(
+                  color: state._hasError ? AppColors.red : AppColors.blue),
               suffixIcon: IconButton(
                   icon: Icon(
                       state._isSearching ? Icons.close : Icons.arrow_drop_down,
                       size: state._isSearching ? null : 30.0,
                       color: state._hasError
-                          ? red
+                          ? AppColors.red
                           : state._showdropdown
-                              ? primaryColor
-                              : blue),
+                              ? AppColors.primary
+                              : AppColors.blue),
                   onPressed: () {
                     if (state._isSearching) {
                       if (!enabled) return;
@@ -97,7 +98,7 @@ class DropDownSearch extends FormField<String> {
                     // color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: shadowBlack,
+                        color: AppColors.shadowBlack,
                         blurRadius: 20,
                         offset: Offset(0, state._hasError ? 0 : 4),
                         spreadRadius: 0,
@@ -122,8 +123,10 @@ class DropDownSearch extends FormField<String> {
                           autofocus: false,
                           focusNode: state._focusNode,
                           style: TextStyles.h4Regular(
-                              color: state._hasError ? red : primaryColor),
-                          cursorColor: primaryColor,
+                              color: state._hasError
+                                  ? AppColors.red
+                                  : AppColors.primary),
+                          cursorColor: AppColors.primary,
                           decoration: effectiveDecoration.copyWith(
                               errorText: field.errorText),
                           textAlign: TextAlign.start,
@@ -263,7 +266,8 @@ class DropDownSearchState extends FormFieldState<String> {
       style: ButtonStyle(alignment: Alignment.centerLeft),
       child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: Text(text, style: TextStyles.h6Regular(color: primaryColor))),
+          child: Text(text,
+              style: TextStyles.h6Regular(color: AppColors.primary))),
       onPressed: () {
         setState(() {
           _effectiveController.text = text;

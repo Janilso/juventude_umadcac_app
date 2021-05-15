@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 import 'package:package_info/package_info.dart';
 import 'package:scroll_shadow_container/scroll_shadow_container.dart';
@@ -45,7 +45,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(color: grey))),
+                    border: Border(bottom: BorderSide(color: AppColors.grey))),
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                 child: Image.asset(ImagesAssets.logoHC),
               ),
@@ -69,13 +69,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
                           icon: Feather.message_circle, text: "Fale Conosco"),
                       _buildItemMenu(icon: Feather.facebook, text: "Facebook"),
                       _buildItemMenu(icon: Feather.youtube, text: "YouTube"),
-                      Divider(height: 0, thickness: 1, color: grey),
+                      Divider(height: 0, thickness: 1, color: AppColors.grey),
                       _buildItemMenu(
                           icon: Feather.file_text, text: "Termos de Uso"),
                       _buildItemMenu(
                           icon: Feather.file_text,
                           text: "Política de Privacidade"),
-                      Divider(height: 0, thickness: 1, color: grey),
+                      Divider(height: 0, thickness: 1, color: AppColors.grey),
                       _buildFooter(),
                     ],
                   ),
@@ -95,7 +95,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
       onPressed}) {
     return FlatButton(
       onPressed: onPressed ?? () {},
-      color: isActive ? activeMenuColor : Colors.white,
+      color: isActive ? AppColors.activeMenu : Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       padding: EdgeInsets.only(left: 10),
       // onTap: onTap,
@@ -104,7 +104,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
         leading: Icon(
           icon,
           size: 22,
-          color: isActive ? Colors.white : iconItemMenuColor,
+          color: isActive ? Colors.white : AppColors.iconItemMenu,
         ),
         title: Container(
           margin: EdgeInsets.only(top: 8),
@@ -113,7 +113,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             style: TextStyle(
                 fontFamily: "Baloo",
                 fontSize: 17,
-                color: isActive ? Colors.white : textItemMenuColor),
+                color: isActive ? Colors.white : AppColors.textItemMenu),
           ),
         ),
       ),
@@ -135,7 +135,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             height: 75,
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: VerticalDivider(
-              color: grey,
+              color: AppColors.grey,
               thickness: 1,
             ),
           ),
@@ -147,13 +147,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 style: TextStyle(
                   fontFamily: "Baloo",
                   fontWeight: FontWeight.w700,
-                  color: greyDark,
+                  color: AppColors.greyDark,
                 ),
               ),
               Text("Versão ${packageInfo?.version ?? '-'}",
                   style: TextStyle(
                     fontFamily: "Baloo",
-                    color: greyDark,
+                    color: AppColors.greyDark,
                   ))
             ],
           )

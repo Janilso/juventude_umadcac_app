@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CardRepertoire extends StatelessWidget {
@@ -27,7 +27,7 @@ class CardRepertoire extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          gradient: gradientAppInverted,
+          gradient: AppColors.gradientAppInverted,
         ),
         child: ListTile(
           leading: Container(

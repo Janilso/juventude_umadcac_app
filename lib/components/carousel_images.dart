@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:juventude_umadcac_app/components/dialog_full_scream.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:photo_view/photo_view.dart';
 
 class CarouselImages extends StatefulWidget {
@@ -80,7 +80,9 @@ class _CarouselImagesState extends State<CarouselImages> {
             margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: _current == index ? activeIndicatorColor : indicatorColor,
+              color: _current == index
+                  ? AppColors.activeIndicator
+                  : AppColors.indicator,
             ),
           );
         }).toList(),
@@ -110,7 +112,7 @@ class _CarouselImagesState extends State<CarouselImages> {
                     padding: EdgeInsets.only(
                         left: 20, bottom: 20, top: 10, right: 15),
                     decoration: BoxDecoration(
-                        gradient: gradientApp,
+                        gradient: AppColors.gradientApp,
                         borderRadius:
                             BorderRadius.only(bottomLeft: Radius.circular(50))),
                     child: Icon(

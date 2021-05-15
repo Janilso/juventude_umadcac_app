@@ -4,7 +4,7 @@ import 'package:juventude_umadcac_app/components/card_event.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/components/custom_calendar.dart';
 import 'package:juventude_umadcac_app/models/evento.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -187,7 +187,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: greyLight),
+                      color: AppColors.greyLight),
                 ),
               ),
               SizedBox(height: 10),
@@ -195,9 +195,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
-                    _buildLend('Hoje', color: grey),
-                    _buildLend('Dia Selecionado', color: green),
-                    _buildLend('Evento', gradient: gradientApp),
+                    _buildLend('Hoje', color: AppColors.grey),
+                    _buildLend('Dia Selecionado', color: AppColors.green),
+                    _buildLend('Evento', gradient: AppColors.gradientApp),
                   ],
                 ),
               )
@@ -224,7 +224,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             padding: const EdgeInsets.only(top: 7),
             child: Text(
               description,
-              style: TextStyles.h5Medium(color: defaultColor),
+              style: TextStyles.h5Medium(color: AppColors.defaultColor),
             ),
           )
         ],
@@ -235,7 +235,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   Widget _buildListEvents(ScrollController scrollController) {
     return Container(
       decoration: BoxDecoration(
-        gradient: gradientApp,
+        gradient: AppColors.gradientApp,
         borderRadius: _borderRadius,
       ),
       height: 20,

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CardJobTitles extends StatelessWidget {
@@ -18,9 +18,10 @@ class CardJobTitles extends StatelessWidget {
       // width: 100,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          color: colorCardJobTitles,
+          color: AppColors.cardJobTitles,
           boxShadow: [
-            BoxShadow(color: shadowBlack, blurRadius: 20, spreadRadius: 0)
+            BoxShadow(
+                color: AppColors.shadowBlack, blurRadius: 20, spreadRadius: 0)
           ]),
       child: Padding(
         padding: EdgeInsets.all(10.0),
@@ -34,7 +35,8 @@ class CardJobTitles extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(50)),
               ),
-              child: Icon(Feather.user, color: colorCardJobTitles, size: 40),
+              child:
+                  Icon(Feather.user, color: AppColors.cardJobTitles, size: 40),
             ),
             SizedBox(height: 15),
             Text(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
@@ -19,7 +19,7 @@ class CardEmpty extends StatelessWidget {
         children: [
           SvgPicture.asset(ImagesAssets.svgEmpty),
           SizedBox(height: 15),
-          Text(mensage, style: TextStyles.h4Regular(color: primaryColor))
+          Text(mensage, style: TextStyles.h4Regular(color: AppColors.primary))
         ],
       ),
     );

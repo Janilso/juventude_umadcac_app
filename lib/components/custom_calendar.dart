@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
@@ -36,7 +36,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
         fontFamily: "Baloo",
         fontWeight: fontWeight ?? FontWeight.w500,
         fontSize: fontSize ?? 20,
-        color: color ?? defaultColor);
+        color: color ?? AppColors.defaultColor);
   }
 
   Widget _buildConfigureDays(BuildContext context, DateTime date,
@@ -65,13 +65,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
     );
   }
 
-  Widget _buildConfigureWeekNames(context, name, {fontColor: defaultColor}) {
+  Widget _buildConfigureWeekNames(context, name, {fontColor}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       alignment: Alignment.center,
       child: Text(
         '${name[0].toUpperCase()}${name.substring(1)}',
-        style: _configureStyle(fontSize: 18, color: fontColor),
+        style: _configureStyle(
+            fontSize: 18, color: fontColor ?? AppColors.defaultColor),
       ),
     );
   }
@@ -88,24 +89,28 @@ class _CustomCalendarState extends State<CustomCalendar> {
       calendarStyle: CalendarStyle(
         eventDayStyle: _configureStyle(),
         outsideStyle: _configureStyle(color: Colors.black26),
-        outsideWeekendStyle: _configureStyle(color: primaryColor.withAlpha(50)),
+        outsideWeekendStyle:
+            _configureStyle(color: AppColors.primary.withAlpha(50)),
         weekdayStyle: _configureStyle(),
-        weekendStyle: _configureStyle(color: primaryColor),
+        weekendStyle: _configureStyle(color: AppColors.primary),
       ),
       headerStyle: HeaderStyle(
         centerHeaderTitle: true,
         titleTextStyle: _configureStyle(
-            color: blueLight, fontWeight: FontWeight.w600, fontSize: 24),
+            color: AppColors.blueLight,
+            fontWeight: FontWeight.w600,
+            fontSize: 24),
         titleTextBuilder: (date, locale) {
           String text = DateFormat('MMM y', locale).format(date);
           return "${text[0].toUpperCase()}${text.substring(1)}";
         },
         formatButtonVisible: false,
         rightChevronIcon:
-            Icon(Feather.chevron_right, color: blueLight, size: 25),
+            Icon(Feather.chevron_right, color: AppColors.blueLight, size: 25),
         rightChevronMargin: EdgeInsets.only(bottom: 15),
         leftChevronMargin: EdgeInsets.only(bottom: 15),
-        leftChevronIcon: Icon(Feather.chevron_left, color: blueLight, size: 25),
+        leftChevronIcon:
+            Icon(Feather.chevron_left, color: AppColors.blueLight, size: 25),
       ),
       onDaySelected: widget.onDaySelected,
       builders: CalendarBuilders(
@@ -116,10 +121,11 @@ class _CustomCalendarState extends State<CustomCalendar> {
           Gradient gradient = events.isEmpty
               ? null
               : isBeforeDate
-                  ? gradientAppDesabled
-                  : gradientApp;
+                  ? AppColors.gradientAppDesabled
+                  : AppColors.gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
-          Color fontColor = events.isEmpty ? defaultColor : Colors.white;
+          Color fontColor =
+              events.isEmpty ? AppColors.defaultColor : Colors.white;
 
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
@@ -127,11 +133,12 @@ class _CustomCalendarState extends State<CustomCalendar> {
               bg: bgColor,
               fontColor: fontColor);
         },
-        todayDayBuilder: (context, date, _) =>
-            _buildConfigureDays(context, date, circular: true, bg: grey),
+        todayDayBuilder: (context, date, _) => _buildConfigureDays(
+            context, date,
+            circular: true, bg: AppColors.grey),
         selectedDayBuilder: (context, date, _) {
           return _buildConfigureDays(context, date,
-              circular: true, bg: green, fontColor: Colors.white);
+              circular: true, bg: AppColors.green, fontColor: Colors.white);
         },
         weekendDayBuilder: (context, DateTime date, eventsList) {
           List events = eventsList ?? [];
@@ -140,10 +147,10 @@ class _CustomCalendarState extends State<CustomCalendar> {
           Gradient gradient = events.isEmpty
               ? null
               : isBeforeDate
-                  ? gradientAppDesabled
-                  : gradientApp;
+                  ? AppColors.gradientAppDesabled
+                  : AppColors.gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
-          Color fontColor = events.isEmpty ? redLight : Colors.white;
+          Color fontColor = events.isEmpty ? AppColors.redLight : Colors.white;
 
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
@@ -158,11 +165,12 @@ class _CustomCalendarState extends State<CustomCalendar> {
           Gradient gradient = events.isEmpty
               ? null
               : isBeforeDate
-                  ? gradientAppDesabled
-                  : gradientApp;
+                  ? AppColors.gradientAppDesabled
+                  : AppColors.gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
-          Color fontColor =
-              events.isEmpty ? defaultColor.withOpacity(0.3) : Colors.white;
+          Color fontColor = events.isEmpty
+              ? AppColors.defaultColor.withOpacity(0.3)
+              : Colors.white;
 
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
@@ -176,11 +184,12 @@ class _CustomCalendarState extends State<CustomCalendar> {
           Gradient gradient = events.isEmpty
               ? null
               : isBeforeDate
-                  ? gradientAppDesabled
-                  : gradientApp;
+                  ? AppColors.gradientAppDesabled
+                  : AppColors.gradientApp;
           Color bgColor = events.isEmpty ? Colors.transparent : null;
-          Color fontColor =
-              events.isEmpty ? redLight.withOpacity(0.3) : Colors.white;
+          Color fontColor = events.isEmpty
+              ? AppColors.redLight.withOpacity(0.3)
+              : Colors.white;
           return _buildConfigureDays(context, date,
               circular: events.isNotEmpty,
               bgGradient: gradient,
@@ -205,7 +214,8 @@ class _CustomCalendarState extends State<CustomCalendar> {
           return _buildConfigureWeekNames(context, name);
         },
         dowWeekendBuilder: (context, name) {
-          return _buildConfigureWeekNames(context, name, fontColor: redLight);
+          return _buildConfigureWeekNames(context, name,
+              fontColor: AppColors.redLight);
         },
       ),
     );
@@ -216,7 +226,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
       duration: const Duration(milliseconds: 100),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: gradientAppInverted,
+          gradient: AppColors.gradientAppInverted,
           border: Border.all(color: Colors.white, width: 2)),
       width: 18.0,
       height: 18.0,

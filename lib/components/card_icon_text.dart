@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CardIconText extends StatelessWidget {
@@ -28,7 +28,8 @@ class CardIconText extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             color: Colors.white,
             boxShadow: [
-              BoxShadow(color: shadowBlack, blurRadius: 20, spreadRadius: 0)
+              BoxShadow(
+                  color: AppColors.shadowBlack, blurRadius: 20, spreadRadius: 0)
             ]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +38,7 @@ class CardIconText extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               text ?? '',
-              style: TextStyles.h5Regular(color: colorItemMenu),
+              style: TextStyles.h5Regular(color: AppColors.itemMenu),
               textAlign: TextAlign.center,
             )
           ],

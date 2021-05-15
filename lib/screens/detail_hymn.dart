@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:juventude_umadcac_app/components/custom_app_bar.dart';
 import 'package:juventude_umadcac_app/models/repertorio.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class DetailHymnScreen extends StatefulWidget {
@@ -27,8 +27,8 @@ class _DetailHymnScreenState extends State<DetailHymnScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Slider(
-                activeColor: secondaryColor,
-                inactiveColor: orangeExtraLight,
+                activeColor: AppColors.secondary,
+                inactiveColor: AppColors.orangeExtraLight,
                 value: _fontSize,
                 min: 20,
                 max: 40,
@@ -38,16 +38,16 @@ class _DetailHymnScreenState extends State<DetailHymnScreen> {
               ),
               SizedBox(height: 30),
               Text(widget.hino?.nome ?? '',
-                  style: TextStyles.h3Bold(color: defaultColor)),
+                  style: TextStyles.h3Bold(color: AppColors.defaultColor)),
               Text(
                 widget.hino?.autoria ?? '',
-                style: TextStyles.h5Regular(color: defaultColor),
+                style: TextStyles.h5Regular(color: AppColors.defaultColor),
               ),
               SizedBox(height: 30),
               Text(
                 widget.hino?.letra ?? '',
                 style: TextStyles.customAll(
-                    color: defaultColor,
+                    color: AppColors.defaultColor,
                     fontSize: _fontSize,
                     fontWeight: FontWeight.w600,
                     height: 0.9),

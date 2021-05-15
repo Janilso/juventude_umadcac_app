@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class InputText extends StatefulWidget {
@@ -58,7 +58,7 @@ class _InputTextState extends State<InputText> {
         // color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: shadowBlack,
+            color: AppColors.shadowBlack,
             blurRadius: 20,
             offset: Offset(0, _hasError ? 0 : 4),
             spreadRadius: 0,
@@ -79,31 +79,33 @@ class _InputTextState extends State<InputText> {
         autocorrect: false,
         autofocus: false,
         focusNode: _focusNode,
-        style: TextStyles.h4Regular(color: _hasError ? red : primaryColor),
-        cursorColor: primaryColor,
+        style: TextStyles.h4Regular(
+            color: _hasError ? AppColors.red : AppColors.primary),
+        cursorColor: AppColors.primary,
         decoration: InputDecoration(
           filled: true,
           hintText: widget.hintText,
-          fillColor: _hasError ? redExtraLight : Colors.white,
+          fillColor: _hasError ? AppColors.redExtraLight : Colors.white,
           border: _builderBorderUnderline(Colors.transparent),
-          focusedErrorBorder: _builderBorderUnderline(red),
-          focusedBorder: _builderBorderUnderline(primaryColor),
+          focusedErrorBorder: _builderBorderUnderline(AppColors.red),
+          focusedBorder: _builderBorderUnderline(AppColors.primary),
           enabledBorder: _builderBorderUnderline(
-              widget.withBorder ? grey : Colors.transparent),
-          errorBorder: _builderBorderUnderline(red),
-          errorStyle: TextStyles.paragraphRegular(color: red),
+              widget.withBorder ? AppColors.grey : Colors.transparent),
+          errorBorder: _builderBorderUnderline(AppColors.red),
+          errorStyle: TextStyles.paragraphRegular(color: AppColors.red),
           prefixIcon: widget.icon != null
               ? Icon(
                   widget.icon,
                   color: _hasError
-                      ? red
+                      ? AppColors.red
                       : _focusNode.hasFocus
-                          ? primaryColor
-                          : blue,
+                          ? AppColors.primary
+                          : AppColors.blue,
                 )
               : null,
           labelText: widget.labelText,
-          labelStyle: TextStyles.h4Regular(color: _hasError ? red : blue),
+          labelStyle: TextStyles.h4Regular(
+              color: _hasError ? AppColors.red : AppColors.blue),
         ),
       ),
     );
@@ -112,7 +114,9 @@ class _InputTextState extends State<InputText> {
   InputBorder _builderBorderUnderline(Color color) {
     return UnderlineInputBorder(
       borderRadius: BorderRadius.horizontal(
-          left: Radius.circular(5), right: Radius.circular(5)),
+        left: Radius.circular(5),
+        right: Radius.circular(5),
+      ),
       borderSide: BorderSide(color: color, width: 4.0),
     );
   }

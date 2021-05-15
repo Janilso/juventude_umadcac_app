@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/theme/text_style.dart';
 
 class CustomButton extends StatelessWidget {
@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
           : 200,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-        gradient: gradientAppInverted,
+        gradient: AppColors.gradientAppInverted,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       child: SizedBox.expand(

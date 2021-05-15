@@ -9,7 +9,7 @@ import 'package:juventude_umadcac_app/screens/about.dart';
 import 'package:juventude_umadcac_app/screens/calendar.dart';
 import 'package:juventude_umadcac_app/screens/repertoire.dart';
 import 'package:juventude_umadcac_app/screens/voluntary.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1000&h=2500&q=80',
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               padding: EdgeInsets.only(top: 30, bottom: 20),
-              color: bgSlider,
+              color: AppColors.bgSlider,
               child: CarouselImages(images: imgList),
             ),
             VersicleDay(),
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CardIconText(
                       icon: Feather.music,
-                      iconColor: purple,
+                      iconColor: AppColors.purple,
                       text: "Repertório",
                       onTap: () {
                         Navigator.push(
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CardIconText(
                       icon: Feather.award,
-                      iconColor: yellow,
+                      iconColor: AppColors.yellow,
                       text: "Ser Voluntário",
                       onTap: () {
                         Navigator.push(
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CardIconText(
                       icon: Feather.info,
-                      iconColor: blueLight,
+                      iconColor: AppColors.blueLight,
                       text: "Sobre",
                       onTap: () {
                         Navigator.push(
@@ -96,19 +96,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CardIconText(
                       icon: Feather.message_circle,
-                      iconColor: green,
+                      iconColor: AppColors.green,
                       text: "Fale Conosco",
                       onTap: () {},
                     ),
                     CardIconText(
                       icon: Feather.file_text,
-                      iconColor: blue,
+                      iconColor: AppColors.blue,
                       text: "Política de Privacidade",
                       onTap: () {},
                     ),
                     CardIconText(
                       icon: Feather.file_text,
-                      iconColor: blue,
+                      iconColor: AppColors.blue,
                       text: "Termos de Uso",
                       onTap: () {},
                     ),

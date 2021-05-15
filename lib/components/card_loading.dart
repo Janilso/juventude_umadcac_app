@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class CardLoading extends StatefulWidget {
@@ -86,12 +86,12 @@ class _CardLoadingState extends State<CardLoading>
           width: size,
           child: Stack(
             children: [
-              Container(color: main ? yellow : blueLight),
+              Container(color: main ? AppColors.yellow : AppColors.blueLight),
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
                   width: size * 0.5,
-                  color: main ? yellowDark : blue,
+                  color: main ? AppColors.yellowDark : AppColors.blue,
                 ),
               )
             ],

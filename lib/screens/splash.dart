@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:juventude_umadcac_app/components/effect_curve.dart';
 import 'package:juventude_umadcac_app/screens/home.dart';
-import 'package:juventude_umadcac_app/theme/style.dart';
+import 'package:juventude_umadcac_app/theme/app_colors.dart';
 import 'package:juventude_umadcac_app/utils/imagens.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,14 +25,9 @@ class _SplashScreen extends State<SplashScreen> with TickerProviderStateMixin {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(gradient: gradientApp),
+      decoration: BoxDecoration(gradient: AppColors.gradientApp),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
